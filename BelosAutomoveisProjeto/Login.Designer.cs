@@ -33,6 +33,8 @@
             username = new TextBox();
             password = new TextBox();
             showPass = new CheckBox();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // signin
@@ -87,12 +89,38 @@
             showPass.UseVisualStyleBackColor = false;
             showPass.CheckedChanged += showPass_CheckedChanged;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(1338, 744);
+            label1.Name = "label1";
+            label1.Size = new Size(131, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Don't have an account?";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.DodgerBlue;
+            label2.Location = new Point(1469, 744);
+            label2.Name = "label2";
+            label2.Size = new Size(64, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Create one";
+            label2.Click += label2_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1904, 1041);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(showPass);
             Controls.Add(password);
             Controls.Add(username);
@@ -111,5 +139,7 @@
         private TextBox username;
         private TextBox password;
         private CheckBox showPass;
+        private Label label1;
+        private Label label2;
     }
 }
