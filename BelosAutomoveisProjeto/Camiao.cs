@@ -9,7 +9,7 @@ namespace BelosAutomoveisProjeto
     public class Camiao : Veiculo
     {
         public double PesoMaximoKg { get; set; }
-
+        //teste
         public override string ToString()
         {
             return base.ToString() + $", Peso Máx: {PesoMaximoKg} kg";
