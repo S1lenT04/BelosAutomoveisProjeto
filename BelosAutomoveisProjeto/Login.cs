@@ -31,45 +31,45 @@ namespace BelosAutomoveisProjeto
 
             try
             {
-                // Validations
+                // Validações
                 if (string.IsNullOrWhiteSpace(user) && string.IsNullOrWhiteSpace(pass))
                 {
-                    MessageBox.Show("Username and Password: both fields are required",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username e Password: ambos os campos são obrigatórios",
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (string.IsNullOrWhiteSpace(user))
                 {
-                    MessageBox.Show("Username: this field is required",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username: este campo é obrigatório",
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (string.IsNullOrWhiteSpace(pass))
                 {
-                    MessageBox.Show("Password: this field is required",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Password: este campo é obrigatório",
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                HomePage newForm = new HomePage();
+                HomePage novoForm = new HomePage();
 
-                // Check if file exists and read user/pass
+                // Verificar se o ficheiro existe e procurar user/pass
                 if (File.Exists("Utilizadores.txt"))
                 {
                     StreamReader rd = new StreamReader("Utilizadores.txt");
-                    string line = "";
+                    string linha = "";
 
                     while (!rd.EndOfStream)
                     {
-                        line = rd.ReadLine();
-                        string[] parts = line.Split(';');
+                        linha = rd.ReadLine();
+                        string[] partes = linha.Split(';');
 
-                        if (parts.Length == 2 && parts[0] == user && parts[1] == pass)
+                        if (partes.Length == 2 && partes[0] == user && partes[1] == pass)
                         {
                             rd.Close();
-                            newForm.Show();
+                            novoForm.Show();
                             this.Hide();
                             return;
                         }
@@ -78,14 +78,14 @@ namespace BelosAutomoveisProjeto
                     rd.Close();
                 }
 
-                MessageBox.Show("Incorrect credentials!", "Error",
+                MessageBox.Show("Dados incorretos!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error while logging in, please try again!\n\nDetails: " + ex.Message,
-                    "Error",
+                    "Erro ao fazer login, tente novamente!\n\nDetalhes: " + ex.Message,
+                    "Erro",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -95,7 +95,14 @@ namespace BelosAutomoveisProjeto
 
         private void showPass_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (showPass.Checked)
+            {
+                password.PasswordChar = '\0';
+            }
+            else
+            {
+                password.PasswordChar = '*';
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

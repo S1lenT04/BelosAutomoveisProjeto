@@ -50,6 +50,7 @@
             showPass.TabIndex = 7;
             showPass.Text = "Show password";
             showPass.UseVisualStyleBackColor = false;
+            showPass.CheckedChanged += showPass_CheckedChanged;
             // 
             // password
             // 
