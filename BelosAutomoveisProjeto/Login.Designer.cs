@@ -46,9 +46,10 @@
             signin.FlatStyle = FlatStyle.Flat;
             signin.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             signin.ForeColor = SystemColors.Control;
-            signin.Location = new Point(1297, 675);
+            signin.Location = new Point(1482, 900);
+            signin.Margin = new Padding(3, 4, 3, 4);
             signin.Name = "signin";
-            signin.Size = new Size(276, 61);
+            signin.Size = new Size(315, 81);
             signin.TabIndex = 0;
             signin.Text = "SIGN IN";
             signin.UseVisualStyleBackColor = false;
@@ -59,9 +60,10 @@
             username.BackColor = Color.White;
             username.BorderStyle = BorderStyle.None;
             username.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            username.Location = new Point(1227, 437);
+            username.Location = new Point(1402, 583);
+            username.Margin = new Padding(3, 4, 3, 4);
             username.Name = "username";
-            username.Size = new Size(420, 28);
+            username.Size = new Size(480, 35);
             username.TabIndex = 1;
             // 
             // password
@@ -69,10 +71,11 @@
             password.BackColor = Color.White;
             password.BorderStyle = BorderStyle.None;
             password.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            password.Location = new Point(1227, 551);
+            password.Location = new Point(1402, 735);
+            password.Margin = new Padding(3, 4, 3, 4);
             password.Name = "password";
             password.PasswordChar = '*';
-            password.Size = new Size(420, 28);
+            password.Size = new Size(480, 35);
             password.TabIndex = 2;
             // 
             // showPass
@@ -81,9 +84,10 @@
             showPass.BackColor = Color.Transparent;
             showPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             showPass.ForeColor = Color.White;
-            showPass.Location = new Point(1222, 606);
+            showPass.Location = new Point(1397, 808);
+            showPass.Margin = new Padding(3, 4, 3, 4);
             showPass.Name = "showPass";
-            showPass.Size = new Size(139, 25);
+            showPass.Size = new Size(170, 32);
             showPass.TabIndex = 3;
             showPass.Text = "Show password";
             showPass.UseVisualStyleBackColor = false;
@@ -94,9 +98,9 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1338, 744);
+            label1.Location = new Point(1529, 992);
             label1.Name = "label1";
-            label1.Size = new Size(131, 15);
+            label1.Size = new Size(163, 20);
             label1.TabIndex = 4;
             label1.Text = "Don't have an account?";
             label1.Click += label1_Click;
@@ -106,25 +110,26 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.ForeColor = Color.DodgerBlue;
-            label2.Location = new Point(1469, 744);
+            label2.Location = new Point(1679, 992);
             label2.Name = "label2";
-            label2.Size = new Size(64, 15);
+            label2.Size = new Size(81, 20);
             label2.TabIndex = 5;
             label2.Text = "Create one";
             label2.Click += label2_Click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1904, 1041);
+            ClientSize = new Size(2176, 1325);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(showPass);
             Controls.Add(password);
             Controls.Add(username);
             Controls.Add(signin);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             Text = "Login";
             WindowState = FormWindowState.Maximized;
