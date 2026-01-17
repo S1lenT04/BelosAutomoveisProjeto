@@ -129,6 +129,7 @@
             addVeiculoBtn.Size = new Size(319, 44);
             addVeiculoBtn.TabIndex = 9;
             addVeiculoBtn.UseVisualStyleBackColor = false;
+            addVeiculoBtn.Click += addVeiculoBtn_Click;
             // 
             // faturacaoBtn
             // 

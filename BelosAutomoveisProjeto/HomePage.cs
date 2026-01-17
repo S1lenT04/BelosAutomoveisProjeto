@@ -37,7 +37,7 @@ namespace BelosAutomoveisProjeto
 
         private void hoverEffect(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(255, 255, 255);
+
         }
 
         private void dashboardBtn_MouseEnter(object sender, EventArgs e)
@@ -48,6 +48,13 @@ namespace BelosAutomoveisProjeto
         private void dashboardBtn_MouseLeave(object sender, EventArgs e)
         {
 
+        }
+
+        private void addVeiculoBtn_Click(object sender, EventArgs e)
+        {
+            CategoriasAdicionarForm CatForm = new CategoriasAdicionarForm();
+
+            CatForm.Show();
         }
     }
 }
