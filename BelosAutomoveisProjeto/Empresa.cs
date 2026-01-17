@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,69 @@ namespace BelosAutomoveisProjeto
     {
         public string Nome { get; set; }
         public List<Veiculo> Veiculos { get; set; }
+        public List<Reserva> Reservas { get; set; }
+
+        private int proximoIdReserva = 1;
 
         public Empresa(string nome)
         {
             Nome = nome;
             Veiculos = new List<Veiculo>();
+            Reservas = new List<Reserva>();
+        }
+
+        // verifica se um veículo está disponível entre duas datas
+        public bool VeiculoDisponivel(Veiculo veiculo, DateTime inicio, DateTime fim)
+        {
+            if (veiculo.Estado != EstadoVeiculo.Disponivel)
+                return false;
+
+            foreach (Reserva r in Reservas)
+            {
+                if (r.Veiculo == veiculo && r.Estado == EstadoReserva.Ativa)
+                {
+                    bool datasSobrepostas =
+                        inicio < r.DataFim && fim > r.DataInicio;
+
+                    if (datasSobrepostas)
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        //cria uma nova reserva se o veículo estiver disponível
+        public Reserva CriarReserva(Veiculo veiculo, DateTime inicio, DateTime fim, decimal precoDiario)
+        {
+            if (!VeiculoDisponivel(veiculo, inicio, fim))
+                throw new Exception("Veículo indisponível para o período selecionado.");
+
+            int dias = (int)Math.Ceiling((fim - inicio).TotalDays);
+            decimal precoTotal = dias * precoDiario;
+
+            Reserva novaReserva = new Reserva(
+                proximoIdReserva++,
+                veiculo,
+                inicio,
+                fim,
+                precoTotal
+            );
+
+            Reservas.Add(novaReserva);
+            veiculo.Estado = EstadoVeiculo.Reservado;
+
+            return novaReserva;
+        }
+
+        // calcula a faturação total entre duas datas
+        public decimal FaturacaoTotal(DateTime inicio, DateTime fim)
+        {
+            return Reservas
+                .Where(r =>
+                    r.Estado == EstadoReserva.Concluida &&
+                    r.DataInicio >= inicio &&
+                    r.DataFim <= fim)
+                .Sum(r => r.PrecoTotal);
         }
 
         public override string ToString()
