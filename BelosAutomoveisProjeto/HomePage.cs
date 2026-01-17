@@ -12,9 +12,11 @@ namespace BelosAutomoveisProjeto
 {
     public partial class HomePage : Form
     {
+        private Empresa empresa;
         public HomePage()
         {
             InitializeComponent();
+            empresa = new Empresa("Belos Automóveis");
         }
 
         private void GenerateDynamicUserControl()
@@ -52,7 +54,7 @@ namespace BelosAutomoveisProjeto
 
         private void addVeiculoBtn_Click(object sender, EventArgs e)
         {
-            CategoriasAdicionarForm CatForm = new CategoriasAdicionarForm();
+            CategoriasAdicionarForm CatForm = new CategoriasAdicionarForm(empresa);
 
             CatForm.Show();
         }

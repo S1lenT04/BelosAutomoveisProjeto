@@ -209,6 +209,7 @@
             Name = "AdicionarCarroForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdicionarCarroForm";
+            Load += AdicionarCarroForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

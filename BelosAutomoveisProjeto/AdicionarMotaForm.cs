@@ -1,20 +1,98 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BelosAutomoveisProjeto
 {
     public partial class AdicionarMotaForm : Form
     {
+        private Empresa? _empresa;
+
+        // Necessário para o Designer
         public AdicionarMotaForm()
         {
             InitializeComponent();
+            addBtn.Click += addBtn_Click;
+            cancelarBtn.Click += cancelarBtn_Click;
+        }
+
+        // Construtor usado pela aplicação (passa a Empresa)
+        public AdicionarMotaForm(Empresa empresa)
+        {
+            InitializeComponent();
+            _empresa = empresa;
+
+            addBtn.Click += addBtn_Click;
+            cancelarBtn.Click += cancelarBtn_Click;
+        }
+
+        private void addBtn_Click(object? sender, EventArgs e)
+        {
+            try
+            {
+
+                if (string.IsNullOrWhiteSpace(matriculatxt.Text) ||
+                    string.IsNullOrWhiteSpace(marcatxt.Text) ||
+                    string.IsNullOrWhiteSpace(modelotxt.Text) ||
+                    string.IsNullOrWhiteSpace(anotxt.Text) ||
+                    string.IsNullOrWhiteSpace(precotxt.Text) ||
+                    string.IsNullOrWhiteSpace(cilindradatxt.Text))
+                {
+                    MessageBox.Show("Preenche todos os campos.");
+                    return;
+                }
+
+                if (!int.TryParse(anotxt.Text, out int ano))
+                {
+                    MessageBox.Show("Ano inválido.");
+                    return;
+                }
+
+                if (!decimal.TryParse(precotxt.Text, out decimal preco))
+                {
+                    MessageBox.Show("Preço diário inválido.");
+                    return;
+                }
+
+                // Aceita "50", "125", "300" ou "50cc", "125cc", etc.
+                string cilTxt = cilindradatxt.Text.Trim().ToLower().Replace("cc", "");
+                if (!int.TryParse(cilTxt, out int cilValor) ||
+                    (cilValor != 50 && cilValor != 125 && cilValor != 300))
+                {
+                    MessageBox.Show("Cilindrada inválida (usa 50, 125 ou 300).");
+                    return;
+                }
+
+                var cilindrada = (Cilindrada)cilValor;
+
+                _empresa.InserirMota(
+                    matriculatxt.Text,
+                    marcatxt.Text,
+                    modelotxt.Text,
+                    ano,
+                    preco,
+                    EstadoVeiculo.Disponivel,
+                    null,
+                    cilindrada
+                );
+
+                MessageBox.Show("Mota inserida com sucesso!");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cancelarBtn_Click(object? sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void AdicionarMotaForm_Load(object sender, EventArgs e)
+        {
+            // pode ficar vazio
         }
     }
 }
+

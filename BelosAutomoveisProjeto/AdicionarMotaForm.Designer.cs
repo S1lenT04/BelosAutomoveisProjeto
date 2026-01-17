@@ -196,6 +196,7 @@
             Controls.Add(matriculatxt);
             Name = "AdicionarMotaForm";
             Text = "AdicionarMotaForm";
+            Load += AdicionarMotaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

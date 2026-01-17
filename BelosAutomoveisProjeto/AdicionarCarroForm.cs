@@ -1,20 +1,110 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BelosAutomoveisProjeto
 {
     public partial class AdicionarCarroForm : Form
     {
+        private readonly Empresa _empresa;
+
+        // Construtor vazio 
         public AdicionarCarroForm()
         {
             InitializeComponent();
         }
+
+        // Construtor correto 
+        public AdicionarCarroForm(Empresa empresa)
+        {
+            InitializeComponent();
+            _empresa = empresa;
+
+            // ligar eventos dos botões
+            addBtn.Click += addBtn_Click;
+            cancelarBtn.Click += cancelarBtn_Click;
+        }
+
+        private void AdicionarCarroForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        // BOTÃO ADICIONAR
+        private void addBtn_Click(object? sender, EventArgs e)
+        {
+            try
+            {
+                // Validações básicas
+                if (string.IsNullOrWhiteSpace(matriculatxt.Text) ||
+                    string.IsNullOrWhiteSpace(marcatxt.Text) ||
+                    string.IsNullOrWhiteSpace(modelotxt.Text) ||
+                    string.IsNullOrWhiteSpace(anotxt.Text) ||
+                    string.IsNullOrWhiteSpace(precotxt.Text) ||
+                    string.IsNullOrWhiteSpace(numPortastxt.Text) ||
+                    string.IsNullOrWhiteSpace(tipoCaixatxt.Text))
+                {
+                    MessageBox.Show("Preenche todos os campos.");
+                    return;
+                }
+
+                if (!int.TryParse(anotxt.Text, out int ano))
+                {
+                    MessageBox.Show("Ano inválido.");
+                    return;
+                }
+
+                if (!decimal.TryParse(precotxt.Text, out decimal preco))
+                {
+                    MessageBox.Show("Preço diário inválido.");
+                    return;
+                }
+
+                if (!int.TryParse(numPortastxt.Text, out int portas) || (portas != 3 && portas != 5))
+                {
+                    MessageBox.Show("Número de portas inválido (tem de ser 3 ou 5).");
+                    return;
+                }
+
+                // Tipo de caixa a partir do texto
+                string caixaTxt = tipoCaixatxt.Text.Trim().ToLower();
+                TipoCaixa caixa;
+
+                if (caixaTxt == "manual")
+                    caixa = TipoCaixa.Manual;
+                else if (caixaTxt == "automatica" || caixaTxt == "automática")
+                    caixa = TipoCaixa.Automatica;
+                else
+                {
+                    MessageBox.Show("Tipo de caixa inválido (usa: Manual ou Automatica).");
+                    return;
+                }
+
+                // Chamada ao BACKEND
+                _empresa.InserirCarro(
+                    matriculatxt.Text,
+                    marcatxt.Text,
+                    modelotxt.Text,
+                    ano,
+                    preco,
+                    EstadoVeiculo.Disponivel,
+                    null,
+                    portas,
+                    caixa
+                );
+
+                MessageBox.Show("Carro inserido com sucesso!");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // BOTÃO CANCELAR
+        private void cancelarBtn_Click(object? sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
+

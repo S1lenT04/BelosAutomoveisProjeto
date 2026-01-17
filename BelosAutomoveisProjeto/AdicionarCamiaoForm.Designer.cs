@@ -208,6 +208,7 @@
             Controls.Add(matriculatxt);
             Name = "AdicionarCamiaoForm";
             Text = "AdicionarCamiaoForm";
+            Load += AdicionarCamiaoForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

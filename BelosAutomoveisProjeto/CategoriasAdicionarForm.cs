@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BelosAutomoveisProjeto
 {
     public partial class CategoriasAdicionarForm : Form
     {
-        public CategoriasAdicionarForm()
+        private readonly Empresa _empresa;
+
+        // agora recebe Empresa
+        public CategoriasAdicionarForm(Empresa empresa)
         {
             InitializeComponent();
+            _empresa = empresa;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -24,35 +21,36 @@ namespace BelosAutomoveisProjeto
 
         private void seguinteBtn_Click(object sender, EventArgs e)
         {
-
         }
 
+        // SÓ O CARRO FOI ALTERADO
         private void carroBtn_Click(object sender, EventArgs e)
         {
-            AdicionarCarroForm CarroForm = new AdicionarCarroForm();
+            var carroForm = new AdicionarCarroForm(_empresa);
             this.Close();
-            CarroForm.Show();
+            carroForm.Show();
         }
 
         private void camiaoBtn_Click(object sender, EventArgs e)
         {
-            AdicionarCamiaoForm CamiaoForm = new AdicionarCamiaoForm();
+            AdicionarCamiaoForm CamiaoForm = new AdicionarCamiaoForm(_empresa);
             this.Close();
             CamiaoForm.Show();
         }
 
         private void camionetaBtn_Click(object sender, EventArgs e)
         {
-            AdicionarCamionetaForm CamionetaForm = new AdicionarCamionetaForm();
+            AdicionarCamionetaForm CamionetaForm = new AdicionarCamionetaForm(_empresa);
             this.Close();
             CamionetaForm.Show();
         }
 
         private void motaBtn_Click(object sender, EventArgs e)
         {
-            AdicionarMotaForm MotaForm = new AdicionarMotaForm();
+            AdicionarMotaForm MotaForm = new AdicionarMotaForm(_empresa);
             this.Close();
             MotaForm.Show();
         }
     }
 }
+

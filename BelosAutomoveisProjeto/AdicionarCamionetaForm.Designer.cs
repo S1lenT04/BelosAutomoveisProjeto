@@ -197,6 +197,7 @@
             Controls.Add(matriculatxt);
             Name = "AdicionarCamionetaForm";
             Text = "AdicionarCamionetaForm";
+            Load += AdicionarCamionetaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
