@@ -36,7 +36,7 @@
             precotxt = new TextBox();
             numPortastxt = new TextBox();
             cancelarBtn = new Button();
-            button1 = new Button();
+            addBtn = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -118,20 +118,20 @@
             cancelarBtn.TabIndex = 18;
             cancelarBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // addBtn
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(372, 753);
-            button1.Name = "button1";
-            button1.Size = new Size(208, 46);
-            button1.TabIndex = 19;
-            button1.UseVisualStyleBackColor = false;
+            addBtn.BackColor = Color.Transparent;
+            addBtn.FlatAppearance.BorderSize = 0;
+            addBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            addBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            addBtn.FlatStyle = FlatStyle.Flat;
+            addBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            addBtn.ForeColor = SystemColors.Control;
+            addBtn.Location = new Point(372, 753);
+            addBtn.Name = "addBtn";
+            addBtn.Size = new Size(208, 46);
+            addBtn.TabIndex = 19;
+            addBtn.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -198,7 +198,7 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(addBtn);
             Controls.Add(cancelarBtn);
             Controls.Add(numPortastxt);
             Controls.Add(precotxt);
@@ -222,7 +222,7 @@
         private TextBox precotxt;
         private TextBox numPortastxt;
         private Button cancelarBtn;
-        private Button button1;
+        private Button addBtn;
         private Button button2;
         private Button button3;
         private Button button4;
