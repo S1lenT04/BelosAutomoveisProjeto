@@ -24,6 +24,18 @@ namespace BelosAutomoveisProjeto
                 "AA-11-BB", "BMW", "Série 1", 2020, 80m,
                 EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
 
+            empresa.InserirCarro(
+                "AA-11-BC", "BMW", "Série 1", 2020, 80m,
+                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
+
+            empresa.InserirCarro(
+                "AA-11-BD", "BMW", "Série 1", 2020, 80m,
+                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
+
+            empresa.InserirCarro(
+                "AA-11-BF", "BMW", "Série 1", 2020, 80m,
+                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
+
             empresa.InserirMota(
                 "CC-22-DD", "Honda", "PCX", 2019, 35m,
                 EstadoVeiculo.Disponivel, null, Cilindrada.Cc125);
@@ -36,7 +48,6 @@ namespace BelosAutomoveisProjeto
                 "GG-44-HH", "Mercedes", "Tourismo", 2017, 130m,
                 EstadoVeiculo.Reservado, null, 3, 55);
 
-            // Exemplo já alugado com data disponível (para ver o formato)
             empresa.InserirCarro(
                 "HH-55-II", "Ford", "Focus", 2021, 70m,
                 EstadoVeiculo.Alugado, DateTime.Today.AddDays(3), 5, TipoCaixa.Automatica);
@@ -82,6 +93,14 @@ namespace BelosAutomoveisProjeto
 
             // Abrir como janela modal, e depois atualizar a lista
             CatForm.ShowDialog();
+            AtualizarListaVeiculos();
+        }
+
+        private void reservaBtn_Click(object sender, EventArgs e)
+        {
+            CriarReserva criarReserva = new CriarReserva(empresa);
+
+            criarReserva.ShowDialog();
             AtualizarListaVeiculos();
         }
     }

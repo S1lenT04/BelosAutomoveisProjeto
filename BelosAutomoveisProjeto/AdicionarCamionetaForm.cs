@@ -34,13 +34,13 @@ namespace BelosAutomoveisProjeto
         {
             try
             {
-
                 if (string.IsNullOrWhiteSpace(matriculatxt.Text) ||
                     string.IsNullOrWhiteSpace(marcatxt.Text) ||
                     string.IsNullOrWhiteSpace(modelotxt.Text) ||
                     string.IsNullOrWhiteSpace(anotxt.Text) ||
                     string.IsNullOrWhiteSpace(precotxt.Text) ||
-                    string.IsNullOrWhiteSpace(pesoMaxtxt.Text))
+                    string.IsNullOrWhiteSpace(numEixostxt.Text) ||
+                    string.IsNullOrWhiteSpace(maxPasstxt.Text))
                 {
                     MessageBox.Show("Preenche todos os campos.");
                     return;
@@ -58,15 +58,20 @@ namespace BelosAutomoveisProjeto
                     return;
                 }
 
-                // peso máximo (kg)
-                if (!double.TryParse(pesoMaxtxt.Text, out double pesoKg) || pesoKg <= 0)
+                if (!int.TryParse(numEixostxt.Text, out int eixos) || (eixos != 2 && eixos != 3))
                 {
-                    MessageBox.Show("Peso máximo inválido (tem de ser > 0).");
+                    MessageBox.Show("Número de eixos inválido (tem de ser 2 ou 3).");
                     return;
                 }
 
-                // chamamos o BACKEND do CAMIÃO
-                _empresa.InserirCamiao(
+                if (!int.TryParse(maxPasstxt.Text, out int maxPass) || maxPass <= 0)
+                {
+                    MessageBox.Show("Máx. passageiros inválido (tem de ser > 0).");
+                    return;
+                }
+
+                // Inserir CAMIONETA 
+                _empresa.InserirCamioneta(
                     matriculatxt.Text,
                     marcatxt.Text,
                     modelotxt.Text,
@@ -74,10 +79,11 @@ namespace BelosAutomoveisProjeto
                     preco,
                     EstadoVeiculo.Disponivel,
                     null,
-                    pesoKg
+                    eixos,
+                    maxPass
                 );
 
-                MessageBox.Show("Camião inserido com sucesso!");
+                MessageBox.Show("Camioneta inserida com sucesso!");
                 Close();
             }
             catch (Exception ex)

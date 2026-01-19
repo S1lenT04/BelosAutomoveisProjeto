@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarCamionetaForm));
             addBtn = new Button();
             cancelarBtn = new Button();
-            pesoMaxtxt = new TextBox();
+            numEixostxt = new TextBox();
             precotxt = new TextBox();
             modelotxt = new TextBox();
             marcatxt = new TextBox();
@@ -40,6 +40,7 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
+            maxPasstxt = new TextBox();
             SuspendLayout();
             // 
             // addBtn
@@ -72,15 +73,15 @@
             cancelarBtn.TabIndex = 30;
             cancelarBtn.UseVisualStyleBackColor = false;
             // 
-            // pesoMaxtxt
+            // numEixostxt
             // 
-            pesoMaxtxt.BackColor = Color.White;
-            pesoMaxtxt.BorderStyle = BorderStyle.None;
-            pesoMaxtxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            pesoMaxtxt.Location = new Point(63, 419);
-            pesoMaxtxt.Name = "pesoMaxtxt";
-            pesoMaxtxt.Size = new Size(594, 28);
-            pesoMaxtxt.TabIndex = 29;
+            numEixostxt.BackColor = Color.White;
+            numEixostxt.BorderStyle = BorderStyle.None;
+            numEixostxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            numEixostxt.Location = new Point(63, 419);
+            numEixostxt.Name = "numEixostxt";
+            numEixostxt.Size = new Size(278, 28);
+            numEixostxt.TabIndex = 29;
             // 
             // precotxt
             // 
@@ -178,18 +179,29 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // maxPasstxt
+            // 
+            maxPasstxt.BackColor = Color.White;
+            maxPasstxt.BorderStyle = BorderStyle.None;
+            maxPasstxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            maxPasstxt.Location = new Point(379, 419);
+            maxPasstxt.Name = "maxPasstxt";
+            maxPasstxt.Size = new Size(278, 28);
+            maxPasstxt.TabIndex = 35;
+            // 
             // AdicionarCamionetaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(704, 811);
+            Controls.Add(maxPasstxt);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(addBtn);
             Controls.Add(cancelarBtn);
-            Controls.Add(pesoMaxtxt);
+            Controls.Add(numEixostxt);
             Controls.Add(precotxt);
             Controls.Add(modelotxt);
             Controls.Add(marcatxt);
@@ -206,7 +218,7 @@
 
         private Button addBtn;
         private Button cancelarBtn;
-        private TextBox pesoMaxtxt;
+        private TextBox numEixostxt;
         private TextBox precotxt;
         private TextBox modelotxt;
         private TextBox marcatxt;
@@ -215,5 +227,6 @@
         private Button button4;
         private Button button3;
         private Button button2;
+        private TextBox maxPasstxt;
     }
 }

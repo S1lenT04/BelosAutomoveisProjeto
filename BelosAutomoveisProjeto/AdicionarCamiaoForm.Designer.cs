@@ -37,7 +37,6 @@
             marcatxt = new TextBox();
             anotxt = new TextBox();
             matriculatxt = new TextBox();
-            maxPasstxt = new TextBox();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
@@ -80,7 +79,7 @@
             numEixostxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             numEixostxt.Location = new Point(64, 418);
             numEixostxt.Name = "numEixostxt";
-            numEixostxt.Size = new Size(278, 28);
+            numEixostxt.Size = new Size(594, 28);
             numEixostxt.TabIndex = 37;
             // 
             // precotxt
@@ -132,16 +131,6 @@
             matriculatxt.Name = "matriculatxt";
             matriculatxt.Size = new Size(278, 28);
             matriculatxt.TabIndex = 32;
-            // 
-            // maxPasstxt
-            // 
-            maxPasstxt.BackColor = Color.White;
-            maxPasstxt.BorderStyle = BorderStyle.None;
-            maxPasstxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            maxPasstxt.Location = new Point(380, 418);
-            maxPasstxt.Name = "maxPasstxt";
-            maxPasstxt.Size = new Size(278, 28);
-            maxPasstxt.TabIndex = 40;
             // 
             // button4
             // 
@@ -197,7 +186,6 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(maxPasstxt);
             Controls.Add(addBtn);
             Controls.Add(cancelarBtn);
             Controls.Add(numEixostxt);
@@ -223,7 +211,6 @@
         private TextBox marcatxt;
         private TextBox anotxt;
         private TextBox matriculatxt;
-        private TextBox maxPasstxt;
         private Button button4;
         private Button button3;
         private Button button2;
