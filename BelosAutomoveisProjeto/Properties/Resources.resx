@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="camiao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\camiao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="camioneta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\camioneta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\carro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado_alugado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\estado_alugado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado_disponivel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\estado_disponivel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado_manutencao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\estado_manutencao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado_reservado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\estado_reservado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mota" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\mota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

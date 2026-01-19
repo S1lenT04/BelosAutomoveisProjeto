@@ -27,29 +27,33 @@ namespace BelosAutomoveisProjeto
         private void carroBtn_Click(object sender, EventArgs e)
         {
             var carroForm = new AdicionarCarroForm(_empresa);
-            this.Close();
-            carroForm.Show();
+            this.Hide();
+            carroForm.ShowDialog(); // espera fechar
+            this.Close();           // fecha este selector
         }
 
         private void camiaoBtn_Click(object sender, EventArgs e)
         {
             AdicionarCamiaoForm CamiaoForm = new AdicionarCamiaoForm(_empresa);
+            this.Hide();
+            CamiaoForm.ShowDialog();
             this.Close();
-            CamiaoForm.Show();
         }
 
         private void camionetaBtn_Click(object sender, EventArgs e)
         {
             AdicionarCamionetaForm CamionetaForm = new AdicionarCamionetaForm(_empresa);
+            this.Hide();
+            CamionetaForm.ShowDialog();
             this.Close();
-            CamionetaForm.Show();
         }
 
         private void motaBtn_Click(object sender, EventArgs e)
         {
             AdicionarMotaForm MotaForm = new AdicionarMotaForm(_empresa);
+            this.Hide();
+            MotaForm.ShowDialog();
             this.Close();
-            MotaForm.Show();
         }
     }
 }

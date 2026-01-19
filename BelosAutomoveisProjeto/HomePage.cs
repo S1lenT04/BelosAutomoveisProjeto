@@ -17,24 +17,48 @@ namespace BelosAutomoveisProjeto
         {
             InitializeComponent();
             empresa = new Empresa("Belos Automóveis");
+
+            // Criar um veículo de cada tipo só para teste/apresentação
+            // (na prática viriam da base de dados ou de ficheiros)
+            empresa.InserirCarro(
+                "AA-11-BB", "BMW", "Série 1", 2020, 80m,
+                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
+
+            empresa.InserirMota(
+                "CC-22-DD", "Honda", "PCX", 2019, 35m,
+                EstadoVeiculo.Disponivel, null, Cilindrada.Cc125);
+
+            empresa.InserirCamiao(
+                "EE-33-FF", "Volvo", "FH", 2018, 150m,
+                EstadoVeiculo.Disponivel, null, 18000);
+
+            empresa.InserirCamioneta(
+                "GG-44-HH", "Mercedes", "Tourismo", 2017, 130m,
+                EstadoVeiculo.Reservado, null, 3, 55);
+
+            // Exemplo já alugado com data disponível (para ver o formato)
+            empresa.InserirCarro(
+                "HH-55-II", "Ford", "Focus", 2021, 70m,
+                EstadoVeiculo.Alugado, DateTime.Today.AddDays(3), 5, TipoCaixa.Automatica);
         }
 
-        private void GenerateDynamicUserControl()
+        // Atualiza a lista com TODOS os veículos da empresa
+        private void AtualizarListaVeiculos()
         {
             flowLayoutPanel1.Controls.Clear();
 
-            VeiculoListItem[] listItems = new VeiculoListItem[5];
-
-            for (int i = 0; i < listItems.Length; i++)
+            var veiculos = empresa.ObterTodosVeiculos();
+            foreach (var v in veiculos)
             {
-                listItems[i] = new VeiculoListItem();
-                flowLayoutPanel1.Controls.Add(listItems[i]);
+                var item = new VeiculoListItem();
+                item.SetData(v); // passa o veículo para o user control
+                flowLayoutPanel1.Controls.Add(item);
             }
         }
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            GenerateDynamicUserControl();
+            AtualizarListaVeiculos();
         }
 
         private void hoverEffect(object sender, EventArgs e)
@@ -56,7 +80,9 @@ namespace BelosAutomoveisProjeto
         {
             CategoriasAdicionarForm CatForm = new CategoriasAdicionarForm(empresa);
 
-            CatForm.Show();
+            // Abrir como janela modal, e depois atualizar a lista
+            CatForm.ShowDialog();
+            AtualizarListaVeiculos();
         }
     }
 }

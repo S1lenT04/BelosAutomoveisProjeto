@@ -29,67 +29,100 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VeiculoListItem));
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            matriculatxt = new Label();
+            marcatxt = new Label();
+            modelotxt = new Label();
+            anotxt = new Label();
+            precotxt = new Label();
+            datatxt = new Label();
+            estadoImg = new PictureBox();
+            categoriaImg = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)estadoImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)categoriaImg).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // matriculatxt
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(190, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(22, 25);
-            label1.TabIndex = 0;
-            label1.Text = "1";
+            matriculatxt.AutoSize = true;
+            matriculatxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            matriculatxt.ForeColor = Color.White;
+            matriculatxt.Location = new Point(146, 24);
+            matriculatxt.Name = "matriculatxt";
+            matriculatxt.Size = new Size(22, 25);
+            matriculatxt.TabIndex = 0;
+            matriculatxt.Text = "1";
             // 
-            // label2
+            // marcatxt
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(345, 24);
-            label2.Name = "label2";
-            label2.Size = new Size(22, 25);
-            label2.TabIndex = 1;
-            label2.Text = "1";
+            marcatxt.AutoSize = true;
+            marcatxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            marcatxt.ForeColor = Color.White;
+            marcatxt.Location = new Point(332, 24);
+            marcatxt.Name = "marcatxt";
+            marcatxt.Size = new Size(22, 25);
+            marcatxt.TabIndex = 1;
+            marcatxt.Text = "1";
             // 
-            // label3
+            // modelotxt
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(568, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(22, 25);
-            label3.TabIndex = 2;
-            label3.Text = "1";
+            modelotxt.AutoSize = true;
+            modelotxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            modelotxt.ForeColor = Color.White;
+            modelotxt.Location = new Point(536, 24);
+            modelotxt.Name = "modelotxt";
+            modelotxt.Size = new Size(22, 25);
+            modelotxt.TabIndex = 2;
+            modelotxt.Text = "1";
             // 
-            // label4
+            // anotxt
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(818, 24);
-            label4.Name = "label4";
-            label4.Size = new Size(22, 25);
-            label4.TabIndex = 3;
-            label4.Text = "1";
+            anotxt.AutoSize = true;
+            anotxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            anotxt.ForeColor = Color.White;
+            anotxt.Location = new Point(750, 24);
+            anotxt.Name = "anotxt";
+            anotxt.Size = new Size(22, 25);
+            anotxt.TabIndex = 3;
+            anotxt.Text = "1";
             // 
-            // label5
+            // precotxt
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(1046, 24);
-            label5.Name = "label5";
-            label5.Size = new Size(22, 25);
-            label5.TabIndex = 4;
-            label5.Text = "1";
+            precotxt.AutoSize = true;
+            precotxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            precotxt.ForeColor = Color.White;
+            precotxt.Location = new Point(925, 24);
+            precotxt.Name = "precotxt";
+            precotxt.Size = new Size(22, 25);
+            precotxt.TabIndex = 4;
+            precotxt.Text = "1";
+            // 
+            // datatxt
+            // 
+            datatxt.AutoSize = true;
+            datatxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            datatxt.ForeColor = Color.White;
+            datatxt.Location = new Point(1101, 24);
+            datatxt.Name = "datatxt";
+            datatxt.Size = new Size(22, 25);
+            datatxt.TabIndex = 5;
+            datatxt.Text = "1";
+            // 
+            // estadoImg
+            // 
+            estadoImg.Location = new Point(19, 30);
+            estadoImg.Name = "estadoImg";
+            estadoImg.Size = new Size(18, 18);
+            estadoImg.TabIndex = 6;
+            estadoImg.TabStop = false;
+            // 
+            // categoriaImg
+            // 
+            categoriaImg.Location = new Point(55, 26);
+            categoriaImg.Name = "categoriaImg";
+            categoriaImg.Size = new Size(27, 25);
+            categoriaImg.TabIndex = 7;
+            categoriaImg.TabStop = false;
+            categoriaImg.Click += pictureBox2_Click;
             // 
             // VeiculoListItem
             // 
@@ -97,23 +130,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(categoriaImg);
+            Controls.Add(estadoImg);
+            Controls.Add(datatxt);
+            Controls.Add(precotxt);
+            Controls.Add(anotxt);
+            Controls.Add(modelotxt);
+            Controls.Add(marcatxt);
+            Controls.Add(matriculatxt);
             Name = "VeiculoListItem";
             Size = new Size(1424, 76);
+            ((System.ComponentModel.ISupportInitialize)estadoImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)categoriaImg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Label matriculatxt;
+        private Label marcatxt;
+        private Label modelotxt;
+        private Label anotxt;
+        private Label precotxt;
+        private Label datatxt;
+        private PictureBox estadoImg;
+        private PictureBox categoriaImg;
     }
 }
