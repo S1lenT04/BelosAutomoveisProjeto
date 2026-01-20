@@ -191,6 +191,7 @@
             todosBtn.Size = new Size(328, 138);
             todosBtn.TabIndex = 19;
             todosBtn.UseVisualStyleBackColor = false;
+            todosBtn.Click += todosBtn_Click;
             // 
             // carroBtn
             // 
@@ -206,6 +207,7 @@
             carroBtn.Size = new Size(328, 138);
             carroBtn.TabIndex = 20;
             carroBtn.UseVisualStyleBackColor = false;
+            carroBtn.Click += carroBtn_Click;
             // 
             // camiaoBtn
             // 
@@ -221,6 +223,7 @@
             camiaoBtn.Size = new Size(328, 138);
             camiaoBtn.TabIndex = 21;
             camiaoBtn.UseVisualStyleBackColor = false;
+            camiaoBtn.Click += camiaoBtn_Click;
             // 
             // camionetaBtn
             // 
@@ -236,6 +239,7 @@
             camionetaBtn.Size = new Size(328, 138);
             camionetaBtn.TabIndex = 22;
             camionetaBtn.UseVisualStyleBackColor = false;
+            camionetaBtn.Click += camionetaBtn_Click;
             // 
             // motaBtn
             // 
@@ -251,6 +255,7 @@
             motaBtn.Size = new Size(328, 138);
             motaBtn.TabIndex = 23;
             motaBtn.UseVisualStyleBackColor = false;
+            motaBtn.Click += motaBtn_Click;
             // 
             // HomePage
             // 
