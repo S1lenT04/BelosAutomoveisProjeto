@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             flowLayoutPanel1 = new FlowLayoutPanel();
             downloadCsvBtn = new Button();
-            avancarBtn = new Button();
             reservaBtn = new Button();
             estadoBtn = new Button();
             addVeiculoBtn = new Button();
@@ -39,6 +38,11 @@
             reservasBtn = new Button();
             dashboardBtn = new Button();
             logoutBtn = new Button();
+            todosBtn = new Button();
+            carroBtn = new Button();
+            camiaoBtn = new Button();
+            camionetaBtn = new Button();
+            motaBtn = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -59,26 +63,12 @@
             downloadCsvBtn.FlatStyle = FlatStyle.Flat;
             downloadCsvBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             downloadCsvBtn.ForeColor = SystemColors.Control;
-            downloadCsvBtn.Location = new Point(74, 767);
+            downloadCsvBtn.Location = new Point(74, 719);
             downloadCsvBtn.Name = "downloadCsvBtn";
             downloadCsvBtn.Size = new Size(319, 44);
             downloadCsvBtn.TabIndex = 5;
             downloadCsvBtn.UseVisualStyleBackColor = false;
-            // 
-            // avancarBtn
-            // 
-            avancarBtn.BackColor = Color.Transparent;
-            avancarBtn.FlatAppearance.BorderSize = 0;
-            avancarBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            avancarBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            avancarBtn.FlatStyle = FlatStyle.Flat;
-            avancarBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            avancarBtn.ForeColor = SystemColors.Control;
-            avancarBtn.Location = new Point(74, 715);
-            avancarBtn.Name = "avancarBtn";
-            avancarBtn.Size = new Size(319, 44);
-            avancarBtn.TabIndex = 6;
-            avancarBtn.UseVisualStyleBackColor = false;
+            downloadCsvBtn.Click += downloadCsvBtn_Click;
             // 
             // reservaBtn
             // 
@@ -187,12 +177,92 @@
             logoutBtn.TabIndex = 18;
             logoutBtn.UseVisualStyleBackColor = false;
             // 
+            // todosBtn
+            // 
+            todosBtn.BackColor = Color.Transparent;
+            todosBtn.FlatAppearance.BorderSize = 0;
+            todosBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            todosBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            todosBtn.FlatStyle = FlatStyle.Flat;
+            todosBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            todosBtn.ForeColor = SystemColors.Control;
+            todosBtn.Location = new Point(74, 124);
+            todosBtn.Name = "todosBtn";
+            todosBtn.Size = new Size(328, 138);
+            todosBtn.TabIndex = 19;
+            todosBtn.UseVisualStyleBackColor = false;
+            // 
+            // carroBtn
+            // 
+            carroBtn.BackColor = Color.Transparent;
+            carroBtn.FlatAppearance.BorderSize = 0;
+            carroBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            carroBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            carroBtn.FlatStyle = FlatStyle.Flat;
+            carroBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            carroBtn.ForeColor = SystemColors.Control;
+            carroBtn.Location = new Point(436, 124);
+            carroBtn.Name = "carroBtn";
+            carroBtn.Size = new Size(328, 138);
+            carroBtn.TabIndex = 20;
+            carroBtn.UseVisualStyleBackColor = false;
+            // 
+            // camiaoBtn
+            // 
+            camiaoBtn.BackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.BorderSize = 0;
+            camiaoBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camiaoBtn.FlatStyle = FlatStyle.Flat;
+            camiaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camiaoBtn.ForeColor = SystemColors.Control;
+            camiaoBtn.Location = new Point(797, 124);
+            camiaoBtn.Name = "camiaoBtn";
+            camiaoBtn.Size = new Size(328, 138);
+            camiaoBtn.TabIndex = 21;
+            camiaoBtn.UseVisualStyleBackColor = false;
+            // 
+            // camionetaBtn
+            // 
+            camionetaBtn.BackColor = Color.Transparent;
+            camionetaBtn.FlatAppearance.BorderSize = 0;
+            camionetaBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camionetaBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camionetaBtn.FlatStyle = FlatStyle.Flat;
+            camionetaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camionetaBtn.ForeColor = SystemColors.Control;
+            camionetaBtn.Location = new Point(1157, 124);
+            camionetaBtn.Name = "camionetaBtn";
+            camionetaBtn.Size = new Size(328, 138);
+            camionetaBtn.TabIndex = 22;
+            camionetaBtn.UseVisualStyleBackColor = false;
+            // 
+            // motaBtn
+            // 
+            motaBtn.BackColor = Color.Transparent;
+            motaBtn.FlatAppearance.BorderSize = 0;
+            motaBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            motaBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            motaBtn.FlatStyle = FlatStyle.Flat;
+            motaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            motaBtn.ForeColor = SystemColors.Control;
+            motaBtn.Location = new Point(1520, 124);
+            motaBtn.Name = "motaBtn";
+            motaBtn.Size = new Size(328, 138);
+            motaBtn.TabIndex = 23;
+            motaBtn.UseVisualStyleBackColor = false;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1904, 1041);
+            Controls.Add(motaBtn);
+            Controls.Add(camionetaBtn);
+            Controls.Add(camiaoBtn);
+            Controls.Add(carroBtn);
+            Controls.Add(todosBtn);
             Controls.Add(logoutBtn);
             Controls.Add(dashboardBtn);
             Controls.Add(reservasBtn);
@@ -200,7 +270,6 @@
             Controls.Add(addVeiculoBtn);
             Controls.Add(estadoBtn);
             Controls.Add(reservaBtn);
-            Controls.Add(avancarBtn);
             Controls.Add(downloadCsvBtn);
             Controls.Add(flowLayoutPanel1);
             Margin = new Padding(3, 2, 3, 2);
@@ -216,7 +285,6 @@
 
         private FlowLayoutPanel flowLayoutPanel1;
         private Button downloadCsvBtn;
-        private Button avancarBtn;
         private Button reservaBtn;
         private Button estadoBtn;
         private Button addVeiculoBtn;
@@ -224,5 +292,10 @@
         private Button reservasBtn;
         private Button dashboardBtn;
         private Button logoutBtn;
+        private Button todosBtn;
+        private Button carroBtn;
+        private Button camiaoBtn;
+        private Button camionetaBtn;
+        private Button motaBtn;
     }
 }
