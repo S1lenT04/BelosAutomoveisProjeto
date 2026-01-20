@@ -192,5 +192,6 @@ namespace BelosAutomoveisProjeto
 
             Veiculos.Add(v);
         }
+
     }
 }

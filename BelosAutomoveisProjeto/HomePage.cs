@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BelosAutomoveisProjeto
 {
@@ -106,7 +109,63 @@ namespace BelosAutomoveisProjeto
 
         private void downloadCsvBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Abre o explorador de ficheiros para escolher onde guardar o ficheiro
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                saveDialog.FileName = "veiculos.csv";
 
+                // Abre a janela "Guardar como" e continua apenas se o utilizador confirmar
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Cria um escritor de ficheiro CSV no caminho escolhido usando codificação UTF-8
+                    using (StreamWriter writer = new StreamWriter(saveDialog.FileName, false, Encoding.UTF8))
+                    {
+                        // Cabeçalho
+                        writer.WriteLine("Tipo;Matrícula;Marca;Modelo;Ano;Preço Diário;Estado;Data Disponível;Detalhes");
+
+                        foreach (var veiculo in empresa.Veiculos)
+                        {
+                            string linha = $"{veiculo.GetType().Name};{veiculo.Matricula};{veiculo.Marca};{veiculo.Modelo};{veiculo.Ano};{veiculo.PrecoDiario};{veiculo.Estado};";
+
+                            if (veiculo.DataDisponivel.HasValue)
+                            {
+                                linha += veiculo.DataDisponivel.Value.ToString("dd/MM/yyyy");
+                            }
+                            linha += ";";
+
+                            // Detalhes específicos
+                            string detalhes = "";
+                            if (veiculo is Carro carro)
+                            {
+                                detalhes = $"Portas: {carro.NumeroPortas}, Caixa: {carro.TipoCaixa}";
+                            }
+                            else if (veiculo is Mota mota)
+                            {
+                                detalhes = $"Cilindrada: {(int)mota.Cilindrada}cc";
+                            }
+                            else if (veiculo is Camioneta camioneta)
+                            {
+                                detalhes = $"Eixos: {camioneta.NumeroEixos}, Máx. Passageiros: {camioneta.MaximoPassageiros}";
+                            }
+                            else if (veiculo is Camiao camiao)
+                            {
+                                detalhes = $"Peso Máx: {camiao.PesoMaximoKg} kg";
+                            }
+
+                            linha += detalhes;
+                            writer.WriteLine(linha);
+                        }
+                    }
+
+                    MessageBox.Show($"Ficheiro exportado com sucesso!\n\n{saveDialog.FileName}", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao exportar CSV: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
