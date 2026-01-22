@@ -43,15 +43,16 @@
             camiaoBtn = new Button();
             camionetaBtn = new Button();
             motaBtn = new Button();
+            emManutencaoBtn = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(420, 384);
+            flowLayoutPanel1.Location = new Point(420, 329);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1456, 562);
+            flowLayoutPanel1.Size = new Size(1456, 604);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // downloadCsvBtn
@@ -63,7 +64,7 @@
             downloadCsvBtn.FlatStyle = FlatStyle.Flat;
             downloadCsvBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             downloadCsvBtn.ForeColor = SystemColors.Control;
-            downloadCsvBtn.Location = new Point(74, 719);
+            downloadCsvBtn.Location = new Point(74, 656);
             downloadCsvBtn.Name = "downloadCsvBtn";
             downloadCsvBtn.Size = new Size(319, 44);
             downloadCsvBtn.TabIndex = 5;
@@ -79,7 +80,7 @@
             reservaBtn.FlatStyle = FlatStyle.Flat;
             reservaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             reservaBtn.ForeColor = SystemColors.Control;
-            reservaBtn.Location = new Point(74, 663);
+            reservaBtn.Location = new Point(74, 605);
             reservaBtn.Name = "reservaBtn";
             reservaBtn.Size = new Size(319, 44);
             reservaBtn.TabIndex = 7;
@@ -95,7 +96,7 @@
             estadoBtn.FlatStyle = FlatStyle.Flat;
             estadoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             estadoBtn.ForeColor = SystemColors.Control;
-            estadoBtn.Location = new Point(74, 612);
+            estadoBtn.Location = new Point(74, 554);
             estadoBtn.Name = "estadoBtn";
             estadoBtn.Size = new Size(319, 44);
             estadoBtn.TabIndex = 8;
@@ -110,7 +111,7 @@
             addVeiculoBtn.FlatStyle = FlatStyle.Flat;
             addVeiculoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             addVeiculoBtn.ForeColor = SystemColors.Control;
-            addVeiculoBtn.Location = new Point(74, 560);
+            addVeiculoBtn.Location = new Point(74, 502);
             addVeiculoBtn.Name = "addVeiculoBtn";
             addVeiculoBtn.Size = new Size(319, 44);
             addVeiculoBtn.TabIndex = 9;
@@ -126,7 +127,7 @@
             faturacaoBtn.FlatStyle = FlatStyle.Flat;
             faturacaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             faturacaoBtn.ForeColor = SystemColors.Control;
-            faturacaoBtn.Location = new Point(74, 454);
+            faturacaoBtn.Location = new Point(74, 394);
             faturacaoBtn.Name = "faturacaoBtn";
             faturacaoBtn.Size = new Size(319, 44);
             faturacaoBtn.TabIndex = 10;
@@ -141,7 +142,7 @@
             reservasBtn.FlatStyle = FlatStyle.Flat;
             reservasBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             reservasBtn.ForeColor = SystemColors.Control;
-            reservasBtn.Location = new Point(74, 405);
+            reservasBtn.Location = new Point(74, 345);
             reservasBtn.Name = "reservasBtn";
             reservasBtn.Size = new Size(319, 44);
             reservasBtn.TabIndex = 11;
@@ -156,7 +157,7 @@
             dashboardBtn.FlatStyle = FlatStyle.Flat;
             dashboardBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             dashboardBtn.ForeColor = SystemColors.Control;
-            dashboardBtn.Location = new Point(74, 349);
+            dashboardBtn.Location = new Point(74, 289);
             dashboardBtn.Name = "dashboardBtn";
             dashboardBtn.Size = new Size(319, 44);
             dashboardBtn.TabIndex = 12;
@@ -186,9 +187,9 @@
             todosBtn.FlatStyle = FlatStyle.Flat;
             todosBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             todosBtn.ForeColor = SystemColors.Control;
-            todosBtn.Location = new Point(74, 124);
+            todosBtn.Location = new Point(74, 84);
             todosBtn.Name = "todosBtn";
-            todosBtn.Size = new Size(328, 138);
+            todosBtn.Size = new Size(328, 132);
             todosBtn.TabIndex = 19;
             todosBtn.UseVisualStyleBackColor = false;
             todosBtn.Click += todosBtn_Click;
@@ -202,7 +203,7 @@
             carroBtn.FlatStyle = FlatStyle.Flat;
             carroBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             carroBtn.ForeColor = SystemColors.Control;
-            carroBtn.Location = new Point(436, 124);
+            carroBtn.Location = new Point(435, 84);
             carroBtn.Name = "carroBtn";
             carroBtn.Size = new Size(328, 138);
             carroBtn.TabIndex = 20;
@@ -218,7 +219,7 @@
             camiaoBtn.FlatStyle = FlatStyle.Flat;
             camiaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             camiaoBtn.ForeColor = SystemColors.Control;
-            camiaoBtn.Location = new Point(797, 124);
+            camiaoBtn.Location = new Point(794, 84);
             camiaoBtn.Name = "camiaoBtn";
             camiaoBtn.Size = new Size(328, 138);
             camiaoBtn.TabIndex = 21;
@@ -234,7 +235,7 @@
             camionetaBtn.FlatStyle = FlatStyle.Flat;
             camionetaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             camionetaBtn.ForeColor = SystemColors.Control;
-            camionetaBtn.Location = new Point(1157, 124);
+            camionetaBtn.Location = new Point(1158, 84);
             camionetaBtn.Name = "camionetaBtn";
             camionetaBtn.Size = new Size(328, 138);
             camionetaBtn.TabIndex = 22;
@@ -250,12 +251,28 @@
             motaBtn.FlatStyle = FlatStyle.Flat;
             motaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             motaBtn.ForeColor = SystemColors.Control;
-            motaBtn.Location = new Point(1520, 124);
+            motaBtn.Location = new Point(1517, 84);
             motaBtn.Name = "motaBtn";
             motaBtn.Size = new Size(328, 138);
             motaBtn.TabIndex = 23;
             motaBtn.UseVisualStyleBackColor = false;
             motaBtn.Click += motaBtn_Click;
+            // 
+            // emManutencaoBtn
+            // 
+            emManutencaoBtn.BackColor = Color.Transparent;
+            emManutencaoBtn.FlatAppearance.BorderSize = 0;
+            emManutencaoBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            emManutencaoBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            emManutencaoBtn.FlatStyle = FlatStyle.Flat;
+            emManutencaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            emManutencaoBtn.ForeColor = SystemColors.Control;
+            emManutencaoBtn.Location = new Point(74, 708);
+            emManutencaoBtn.Name = "emManutencaoBtn";
+            emManutencaoBtn.Size = new Size(319, 44);
+            emManutencaoBtn.TabIndex = 24;
+            emManutencaoBtn.UseVisualStyleBackColor = false;
+            emManutencaoBtn.Click += emManutencaoBtn_Click;
             // 
             // HomePage
             // 
@@ -263,6 +280,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1904, 1041);
+            Controls.Add(emManutencaoBtn);
             Controls.Add(motaBtn);
             Controls.Add(camionetaBtn);
             Controls.Add(camiaoBtn);
@@ -302,5 +320,6 @@
         private Button camiaoBtn;
         private Button camionetaBtn;
         private Button motaBtn;
+        private Button emManutencaoBtn;
     }
 }

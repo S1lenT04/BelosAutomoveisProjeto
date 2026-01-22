@@ -57,7 +57,7 @@
             marcatxt.AutoSize = true;
             marcatxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             marcatxt.ForeColor = Color.White;
-            marcatxt.Location = new Point(332, 24);
+            marcatxt.Location = new Point(378, 24);
             marcatxt.Name = "marcatxt";
             marcatxt.Size = new Size(22, 25);
             marcatxt.TabIndex = 1;
@@ -68,7 +68,7 @@
             modelotxt.AutoSize = true;
             modelotxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             modelotxt.ForeColor = Color.White;
-            modelotxt.Location = new Point(536, 24);
+            modelotxt.Location = new Point(619, 24);
             modelotxt.Name = "modelotxt";
             modelotxt.Size = new Size(22, 25);
             modelotxt.TabIndex = 2;
@@ -79,7 +79,7 @@
             anotxt.AutoSize = true;
             anotxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             anotxt.ForeColor = Color.White;
-            anotxt.Location = new Point(750, 24);
+            anotxt.Location = new Point(862, 24);
             anotxt.Name = "anotxt";
             anotxt.Size = new Size(22, 25);
             anotxt.TabIndex = 3;
@@ -90,7 +90,7 @@
             precotxt.AutoSize = true;
             precotxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             precotxt.ForeColor = Color.White;
-            precotxt.Location = new Point(925, 24);
+            precotxt.Location = new Point(1065, 24);
             precotxt.Name = "precotxt";
             precotxt.Size = new Size(22, 25);
             precotxt.TabIndex = 4;
@@ -101,7 +101,7 @@
             datatxt.AutoSize = true;
             datatxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             datatxt.ForeColor = Color.White;
-            datatxt.Location = new Point(1101, 24);
+            datatxt.Location = new Point(1267, 24);
             datatxt.Name = "datatxt";
             datatxt.Size = new Size(22, 25);
             datatxt.TabIndex = 5;

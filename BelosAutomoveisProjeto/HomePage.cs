@@ -42,11 +42,11 @@ namespace BelosAutomoveisProjeto
 
             empresa.InserirMota(
                 "CC-22-DD", "Honda", "PCX", 2019, 35m,
-                EstadoVeiculo.Disponivel, null, Cilindrada.Cc125);
+                EstadoVeiculo.EmManutencao, DateTime.Today.AddDays(6), Cilindrada.Cc125);
 
             empresa.InserirCamiao(
                 "EE-33-FF", "Volvo", "FH", 2018, 150m,
-                EstadoVeiculo.Disponivel, null, 18000);
+                EstadoVeiculo.EmManutencao, DateTime.Today.AddDays(9), 18000);
 
             empresa.InserirCamioneta(
                 "GG-44-HH", "Mercedes", "Tourismo", 2017, 130m,
@@ -237,8 +237,12 @@ namespace BelosAutomoveisProjeto
                 }
             }
         }
-        // MOSTRA APENAS OS VEÍCULOS EM MANUTENÇÃO
         private void estadoBtn_Click(object sender, EventArgs e)
+        {
+        }
+
+        // MOSTRA APENAS OS VEÍCULOS EM MANUTENÇÃO
+        private void emManutencaoBtn_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
             var veiculosEmManutencao = empresa.ObterVeiculosEmManutencao();
