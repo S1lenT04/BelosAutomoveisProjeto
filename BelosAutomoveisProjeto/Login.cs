@@ -53,8 +53,6 @@ namespace BelosAutomoveisProjeto
                     return;
                 }
 
-                HomePage novoForm = new HomePage();
-
                 // Verificar se o ficheiro existe e procurar user/pass
                 if (File.Exists("Utilizadores.txt"))
                 {
@@ -69,7 +67,8 @@ namespace BelosAutomoveisProjeto
                         if (partes.Length == 2 && partes[0] == user && partes[1] == pass)
                         {
                             rd.Close();
-                            novoForm.Show();
+                            HomePage homePage = new HomePage(user);
+                            homePage.Show();
                             this.Hide();
                             return;
                         }

@@ -44,6 +44,7 @@
             camionetaBtn = new Button();
             motaBtn = new Button();
             emManutencaoBtn = new Button();
+            username = new Label();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -274,12 +275,25 @@
             emManutencaoBtn.UseVisualStyleBackColor = false;
             emManutencaoBtn.Click += emManutencaoBtn_Click;
             // 
+            // username
+            // 
+            username.AutoSize = true;
+            username.BackColor = Color.Transparent;
+            username.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            username.ForeColor = Color.White;
+            username.Location = new Point(102, 939);
+            username.Name = "username";
+            username.Size = new Size(61, 25);
+            username.TabIndex = 25;
+            username.Text = "label1";
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1904, 1041);
+            Controls.Add(username);
             Controls.Add(emManutencaoBtn);
             Controls.Add(motaBtn);
             Controls.Add(camionetaBtn);
@@ -302,6 +316,7 @@
             WindowState = FormWindowState.Maximized;
             Load += HomePage_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -321,5 +336,6 @@
         private Button camionetaBtn;
         private Button motaBtn;
         private Button emManutencaoBtn;
+        private Label username;
     }
 }

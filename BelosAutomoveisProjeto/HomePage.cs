@@ -17,9 +17,12 @@ namespace BelosAutomoveisProjeto
     public partial class HomePage : Form
     {
         private Empresa empresa;
-        public HomePage()
+        private string nomeUtilizador;
+
+        public HomePage(string nomeUtilizador = "")
         {
             InitializeComponent();
+            this.nomeUtilizador = nomeUtilizador;
             empresa = new Empresa("Belos Automóveis");
 
             // Criar um veículo de cada tipo só para teste/apresentação
@@ -74,6 +77,12 @@ namespace BelosAutomoveisProjeto
         private void HomePage_Load(object sender, EventArgs e)
         {
             AtualizarListaVeiculos();
+
+            // Mostra o nome do utilizador na label
+            if (!string.IsNullOrWhiteSpace(nomeUtilizador))
+            {
+                username.Text = nomeUtilizador;
+            }
         }
 
         private void hoverEffect(object sender, EventArgs e)
