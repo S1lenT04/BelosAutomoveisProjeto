@@ -35,9 +35,15 @@ namespace BelosAutomoveisProjeto
                     string.IsNullOrWhiteSpace(modelotxt.Text) ||
                     string.IsNullOrWhiteSpace(anotxt.Text) ||
                     string.IsNullOrWhiteSpace(precotxt.Text) ||
-                    string.IsNullOrWhiteSpace(cilindradatxt.Text))
+                    cilindradaDrop.SelectedIndex == -1)
                 {
                     MessageBox.Show("Preenche todos os campos.");
+                    return;
+                }
+
+                if (_empresa == null)
+                {
+                    MessageBox.Show("Erro interno: empresa não inicializada.");
                     return;
                 }
 
@@ -53,8 +59,8 @@ namespace BelosAutomoveisProjeto
                     return;
                 }
 
-                // Aceita "50", "125", "300" ou "50cc", "125cc", etc.
-                string cilTxt = cilindradatxt.Text.Trim().ToLower().Replace("cc", "");
+                // Aceita "50cc", "125cc", "300cc"
+                string cilTxt = cilindradaDrop.SelectedItem!.ToString()!.Trim().ToLower().Replace("cc", "");
                 if (!int.TryParse(cilTxt, out int cilValor) ||
                     (cilValor != 50 && cilValor != 125 && cilValor != 300))
                 {

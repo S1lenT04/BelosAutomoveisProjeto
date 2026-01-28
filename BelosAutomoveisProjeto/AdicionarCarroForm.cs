@@ -33,16 +33,21 @@ namespace BelosAutomoveisProjeto
         {
             try
             {
-                // Validações básicas
+                // Validações básicas (textbox)
                 if (string.IsNullOrWhiteSpace(matriculatxt.Text) ||
                     string.IsNullOrWhiteSpace(marcatxt.Text) ||
                     string.IsNullOrWhiteSpace(modelotxt.Text) ||
                     string.IsNullOrWhiteSpace(anotxt.Text) ||
-                    string.IsNullOrWhiteSpace(precotxt.Text) ||
-                    string.IsNullOrWhiteSpace(numPortastxt.Text) ||
-                    string.IsNullOrWhiteSpace(tipoCaixatxt.Text))
+                    string.IsNullOrWhiteSpace(precotxt.Text))
                 {
                     MessageBox.Show("Preenche todos os campos.");
+                    return;
+                }
+
+                // Validações básicas (combobox)
+                if (numportasDrop.SelectedIndex == -1 || tipoCaixaDrop.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Seleciona o número de portas e o tipo de caixa.");
                     return;
                 }
 
@@ -58,14 +63,16 @@ namespace BelosAutomoveisProjeto
                     return;
                 }
 
-                if (!int.TryParse(numPortastxt.Text, out int portas) || (portas != 3 && portas != 5))
+                // Portas a partir do ComboBox
+                if (!int.TryParse(numportasDrop.SelectedItem!.ToString(), out int portas) || (portas != 3 && portas != 5))
                 {
                     MessageBox.Show("Número de portas inválido (tem de ser 3 ou 5).");
                     return;
                 }
 
-                // Tipo de caixa a partir do texto
-                string caixaTxt = tipoCaixatxt.Text.Trim().ToLower();
+                // Tipo de caixa a partir do combobox
+
+                string caixaTxt = tipoCaixaDrop.SelectedItem!.ToString()!.Trim().ToLower();
                 TipoCaixa caixa;
 
                 if (caixaTxt == "manual")
@@ -74,7 +81,7 @@ namespace BelosAutomoveisProjeto
                     caixa = TipoCaixa.Automatica;
                 else
                 {
-                    MessageBox.Show("Tipo de caixa inválido (usa: Manual ou Automatica).");
+                    MessageBox.Show("Tipo de caixa inválido.");
                     return;
                 }
 

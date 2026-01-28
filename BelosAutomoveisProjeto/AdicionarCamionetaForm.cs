@@ -39,10 +39,16 @@ namespace BelosAutomoveisProjeto
                     string.IsNullOrWhiteSpace(modelotxt.Text) ||
                     string.IsNullOrWhiteSpace(anotxt.Text) ||
                     string.IsNullOrWhiteSpace(precotxt.Text) ||
-                    string.IsNullOrWhiteSpace(numEixostxt.Text) ||
+                    numEixosDrop.SelectedIndex == -1 ||
                     string.IsNullOrWhiteSpace(maxPasstxt.Text))
                 {
                     MessageBox.Show("Preenche todos os campos.");
+                    return;
+                }
+
+                if (_empresa == null)
+                {
+                    MessageBox.Show("Erro interno: empresa não inicializada.");
                     return;
                 }
 
@@ -58,7 +64,7 @@ namespace BelosAutomoveisProjeto
                     return;
                 }
 
-                if (!int.TryParse(numEixostxt.Text, out int eixos) || (eixos != 2 && eixos != 3))
+                if (!int.TryParse(numEixosDrop.SelectedItem!.ToString(), out int eixos) || (eixos != 2 && eixos != 3))
                 {
                     MessageBox.Show("Número de eixos inválido (tem de ser 2 ou 3).");
                     return;
