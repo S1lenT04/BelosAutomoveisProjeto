@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarMotaForm));
             addBtn = new Button();
             cancelarBtn = new Button();
-            cilindradatxt = new TextBox();
             precotxt = new TextBox();
             modelotxt = new TextBox();
             marcatxt = new TextBox();
             anotxt = new TextBox();
             matriculatxt = new TextBox();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            camiaoBtn = new Button();
+            camionetaBtn = new Button();
+            carroBtn = new Button();
+            cilindradaDrop = new ComboBox();
             SuspendLayout();
             // 
             // addBtn
@@ -71,16 +71,6 @@
             cancelarBtn.Size = new Size(208, 46);
             cancelarBtn.TabIndex = 46;
             cancelarBtn.UseVisualStyleBackColor = false;
-            // 
-            // cilindradatxt
-            // 
-            cilindradatxt.BackColor = Color.White;
-            cilindradatxt.BorderStyle = BorderStyle.None;
-            cilindradatxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            cilindradatxt.Location = new Point(63, 419);
-            cilindradatxt.Name = "cilindradatxt";
-            cilindradatxt.Size = new Size(594, 28);
-            cilindradatxt.TabIndex = 45;
             // 
             // precotxt
             // 
@@ -132,50 +122,63 @@
             matriculatxt.Size = new Size(278, 28);
             matriculatxt.TabIndex = 40;
             // 
-            // button4
+            // camiaoBtn
             // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.Control;
-            button4.Location = new Point(124, 333);
-            button4.Name = "button4";
-            button4.Size = new Size(89, 37);
-            button4.TabIndex = 50;
-            button4.UseVisualStyleBackColor = false;
+            camiaoBtn.BackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.BorderSize = 0;
+            camiaoBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camiaoBtn.FlatStyle = FlatStyle.Flat;
+            camiaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camiaoBtn.ForeColor = SystemColors.Control;
+            camiaoBtn.Location = new Point(236, 332);
+            camiaoBtn.Name = "camiaoBtn";
+            camiaoBtn.Size = new Size(105, 37);
+            camiaoBtn.TabIndex = 50;
+            camiaoBtn.UseVisualStyleBackColor = false;
+            camiaoBtn.Click += camiaoBtn_Click;
             // 
-            // button3
+            // camionetaBtn
             // 
-            button3.BackColor = Color.Transparent;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(358, 331);
-            button3.Name = "button3";
-            button3.Size = new Size(127, 37);
-            button3.TabIndex = 49;
-            button3.UseVisualStyleBackColor = false;
+            camionetaBtn.BackColor = Color.Transparent;
+            camionetaBtn.FlatAppearance.BorderSize = 0;
+            camionetaBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camionetaBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camionetaBtn.FlatStyle = FlatStyle.Flat;
+            camionetaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camionetaBtn.ForeColor = SystemColors.Control;
+            camionetaBtn.Location = new Point(363, 332);
+            camionetaBtn.Name = "camionetaBtn";
+            camionetaBtn.Size = new Size(130, 37);
+            camionetaBtn.TabIndex = 49;
+            camionetaBtn.UseVisualStyleBackColor = false;
+            camionetaBtn.Click += camionetaBtn_Click;
             // 
-            // button2
+            // carroBtn
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(236, 331);
-            button2.Name = "button2";
-            button2.Size = new Size(105, 37);
-            button2.TabIndex = 48;
-            button2.UseVisualStyleBackColor = false;
+            carroBtn.BackColor = Color.Transparent;
+            carroBtn.FlatAppearance.BorderSize = 0;
+            carroBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            carroBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            carroBtn.FlatStyle = FlatStyle.Flat;
+            carroBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            carroBtn.ForeColor = SystemColors.Control;
+            carroBtn.Location = new Point(117, 332);
+            carroBtn.Name = "carroBtn";
+            carroBtn.Size = new Size(105, 37);
+            carroBtn.TabIndex = 48;
+            carroBtn.UseVisualStyleBackColor = false;
+            carroBtn.Click += carroBtn_Click;
+            // 
+            // cilindradaDrop
+            // 
+            cilindradaDrop.DropDownStyle = ComboBoxStyle.DropDownList;
+            cilindradaDrop.FormattingEnabled = true;
+            cilindradaDrop.Items.AddRange(new object[] { "50cc", "125cc", "300cc" });
+            cilindradaDrop.Location = new Point(63, 422);
+            cilindradaDrop.Name = "cilindradaDrop";
+            cilindradaDrop.Size = new Size(594, 23);
+            cilindradaDrop.TabIndex = 51;
             // 
             // AdicionarMotaForm
             // 
@@ -183,18 +186,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(704, 811);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(cilindradaDrop);
+            Controls.Add(camiaoBtn);
+            Controls.Add(camionetaBtn);
+            Controls.Add(carroBtn);
             Controls.Add(addBtn);
             Controls.Add(cancelarBtn);
-            Controls.Add(cilindradatxt);
             Controls.Add(precotxt);
             Controls.Add(modelotxt);
             Controls.Add(marcatxt);
             Controls.Add(anotxt);
             Controls.Add(matriculatxt);
             Name = "AdicionarMotaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdicionarMotaForm";
             Load += AdicionarMotaForm_Load;
             ResumeLayout(false);
@@ -205,14 +209,14 @@
 
         private Button addBtn;
         private Button cancelarBtn;
-        private TextBox cilindradatxt;
         private TextBox precotxt;
         private TextBox modelotxt;
         private TextBox marcatxt;
         private TextBox anotxt;
         private TextBox matriculatxt;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button camiaoBtn;
+        private Button camionetaBtn;
+        private Button carroBtn;
+        private ComboBox cilindradaDrop;
     }
 }

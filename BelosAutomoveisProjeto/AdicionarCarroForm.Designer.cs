@@ -34,13 +34,13 @@
             marcatxt = new TextBox();
             modelotxt = new TextBox();
             precotxt = new TextBox();
-            numPortastxt = new TextBox();
             cancelarBtn = new Button();
             addBtn = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            tipoCaixatxt = new TextBox();
+            motaBtn = new Button();
+            camionetaBtn = new Button();
+            camiaoBtn = new Button();
+            numportasDrop = new ComboBox();
+            tipoCaixaDrop = new ComboBox();
             SuspendLayout();
             // 
             // matriculatxt
@@ -93,16 +93,6 @@
             precotxt.Size = new Size(594, 28);
             precotxt.TabIndex = 6;
             // 
-            // numPortastxt
-            // 
-            numPortastxt.BackColor = Color.White;
-            numPortastxt.BorderStyle = BorderStyle.None;
-            numPortastxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            numPortastxt.Location = new Point(63, 419);
-            numPortastxt.Name = "numPortastxt";
-            numPortastxt.Size = new Size(278, 28);
-            numPortastxt.TabIndex = 7;
-            // 
             // cancelarBtn
             // 
             cancelarBtn.BackColor = Color.Transparent;
@@ -133,60 +123,73 @@
             addBtn.TabIndex = 19;
             addBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // motaBtn
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(236, 332);
-            button2.Name = "button2";
-            button2.Size = new Size(105, 37);
-            button2.TabIndex = 20;
-            button2.UseVisualStyleBackColor = false;
+            motaBtn.BackColor = Color.Transparent;
+            motaBtn.FlatAppearance.BorderSize = 0;
+            motaBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            motaBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            motaBtn.FlatStyle = FlatStyle.Flat;
+            motaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            motaBtn.ForeColor = SystemColors.Control;
+            motaBtn.Location = new Point(509, 332);
+            motaBtn.Name = "motaBtn";
+            motaBtn.Size = new Size(89, 37);
+            motaBtn.TabIndex = 46;
+            motaBtn.UseVisualStyleBackColor = false;
+            motaBtn.Click += motaBtn_Click;
             // 
-            // button3
+            // camionetaBtn
             // 
-            button3.BackColor = Color.Transparent;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(362, 332);
-            button3.Name = "button3";
-            button3.Size = new Size(127, 37);
-            button3.TabIndex = 21;
-            button3.UseVisualStyleBackColor = false;
+            camionetaBtn.BackColor = Color.Transparent;
+            camionetaBtn.FlatAppearance.BorderSize = 0;
+            camionetaBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camionetaBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camionetaBtn.FlatStyle = FlatStyle.Flat;
+            camionetaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camionetaBtn.ForeColor = SystemColors.Control;
+            camionetaBtn.Location = new Point(360, 332);
+            camionetaBtn.Name = "camionetaBtn";
+            camionetaBtn.Size = new Size(130, 37);
+            camionetaBtn.TabIndex = 45;
+            camionetaBtn.UseVisualStyleBackColor = false;
+            camionetaBtn.Click += camionetaBtn_Click;
             // 
-            // button4
+            // camiaoBtn
             // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.Control;
-            button4.Location = new Point(510, 332);
-            button4.Name = "button4";
-            button4.Size = new Size(89, 37);
-            button4.TabIndex = 22;
-            button4.UseVisualStyleBackColor = false;
+            camiaoBtn.BackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.BorderSize = 0;
+            camiaoBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camiaoBtn.FlatStyle = FlatStyle.Flat;
+            camiaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camiaoBtn.ForeColor = SystemColors.Control;
+            camiaoBtn.Location = new Point(235, 332);
+            camiaoBtn.Name = "camiaoBtn";
+            camiaoBtn.Size = new Size(105, 37);
+            camiaoBtn.TabIndex = 44;
+            camiaoBtn.UseVisualStyleBackColor = false;
+            camiaoBtn.Click += camiaoBtn_Click;
             // 
-            // tipoCaixatxt
+            // numportasDrop
             // 
-            tipoCaixatxt.BackColor = Color.White;
-            tipoCaixatxt.BorderStyle = BorderStyle.None;
-            tipoCaixatxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            tipoCaixatxt.Location = new Point(379, 419);
-            tipoCaixatxt.Name = "tipoCaixatxt";
-            tipoCaixatxt.Size = new Size(278, 28);
-            tipoCaixatxt.TabIndex = 23;
+            numportasDrop.DropDownStyle = ComboBoxStyle.DropDownList;
+            numportasDrop.FormattingEnabled = true;
+            numportasDrop.Items.AddRange(new object[] { "3", "5" });
+            numportasDrop.Location = new Point(63, 422);
+            numportasDrop.Name = "numportasDrop";
+            numportasDrop.Size = new Size(278, 23);
+            numportasDrop.TabIndex = 48;
+            // 
+            // tipoCaixaDrop
+            // 
+            tipoCaixaDrop.DropDownStyle = ComboBoxStyle.DropDownList;
+            tipoCaixaDrop.FormattingEnabled = true;
+            tipoCaixaDrop.Items.AddRange(new object[] { "Manual", "Automática" });
+            tipoCaixaDrop.Location = new Point(379, 422);
+            tipoCaixaDrop.Name = "tipoCaixaDrop";
+            tipoCaixaDrop.Size = new Size(278, 23);
+            tipoCaixaDrop.TabIndex = 49;
             // 
             // AdicionarCarroForm
             // 
@@ -194,13 +197,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(704, 811);
-            Controls.Add(tipoCaixatxt);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(tipoCaixaDrop);
+            Controls.Add(numportasDrop);
+            Controls.Add(motaBtn);
+            Controls.Add(camionetaBtn);
+            Controls.Add(camiaoBtn);
             Controls.Add(addBtn);
             Controls.Add(cancelarBtn);
-            Controls.Add(numPortastxt);
             Controls.Add(precotxt);
             Controls.Add(modelotxt);
             Controls.Add(marcatxt);
@@ -221,12 +224,12 @@
         private TextBox marcatxt;
         private TextBox modelotxt;
         private TextBox precotxt;
-        private TextBox numPortastxt;
         private Button cancelarBtn;
         private Button addBtn;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private TextBox tipoCaixatxt;
+        private Button motaBtn;
+        private Button camionetaBtn;
+        private Button camiaoBtn;
+        private ComboBox numportasDrop;
+        private ComboBox tipoCaixaDrop;
     }
 }

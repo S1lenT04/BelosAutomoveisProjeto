@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarCamionetaForm));
             addBtn = new Button();
             cancelarBtn = new Button();
-            numEixostxt = new TextBox();
             precotxt = new TextBox();
             modelotxt = new TextBox();
             marcatxt = new TextBox();
             anotxt = new TextBox();
             matriculatxt = new TextBox();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
             maxPasstxt = new TextBox();
+            motaBtn = new Button();
+            camiaoBtn = new Button();
+            carroBtn = new Button();
+            numEixosDrop = new ComboBox();
             SuspendLayout();
             // 
             // addBtn
@@ -72,16 +72,6 @@
             cancelarBtn.Size = new Size(208, 46);
             cancelarBtn.TabIndex = 30;
             cancelarBtn.UseVisualStyleBackColor = false;
-            // 
-            // numEixostxt
-            // 
-            numEixostxt.BackColor = Color.White;
-            numEixostxt.BorderStyle = BorderStyle.None;
-            numEixostxt.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            numEixostxt.Location = new Point(63, 419);
-            numEixostxt.Name = "numEixostxt";
-            numEixostxt.Size = new Size(278, 28);
-            numEixostxt.TabIndex = 29;
             // 
             // precotxt
             // 
@@ -133,52 +123,6 @@
             matriculatxt.Size = new Size(278, 28);
             matriculatxt.TabIndex = 24;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.Control;
-            button4.Location = new Point(505, 330);
-            button4.Name = "button4";
-            button4.Size = new Size(89, 37);
-            button4.TabIndex = 34;
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Transparent;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(357, 330);
-            button3.Name = "button3";
-            button3.Size = new Size(127, 37);
-            button3.TabIndex = 33;
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(114, 330);
-            button2.Name = "button2";
-            button2.Size = new Size(105, 37);
-            button2.TabIndex = 32;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // maxPasstxt
             // 
             maxPasstxt.BackColor = Color.White;
@@ -189,25 +133,83 @@
             maxPasstxt.Size = new Size(278, 28);
             maxPasstxt.TabIndex = 35;
             // 
+            // motaBtn
+            // 
+            motaBtn.BackColor = Color.Transparent;
+            motaBtn.FlatAppearance.BorderSize = 0;
+            motaBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            motaBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            motaBtn.FlatStyle = FlatStyle.Flat;
+            motaBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            motaBtn.ForeColor = SystemColors.Control;
+            motaBtn.Location = new Point(509, 332);
+            motaBtn.Name = "motaBtn";
+            motaBtn.Size = new Size(89, 37);
+            motaBtn.TabIndex = 46;
+            motaBtn.UseVisualStyleBackColor = false;
+            motaBtn.Click += motaBtn_Click;
+            // 
+            // camiaoBtn
+            // 
+            camiaoBtn.BackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.BorderSize = 0;
+            camiaoBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            camiaoBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            camiaoBtn.FlatStyle = FlatStyle.Flat;
+            camiaoBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            camiaoBtn.ForeColor = SystemColors.Control;
+            camiaoBtn.Location = new Point(237, 332);
+            camiaoBtn.Name = "camiaoBtn";
+            camiaoBtn.Size = new Size(104, 37);
+            camiaoBtn.TabIndex = 45;
+            camiaoBtn.UseVisualStyleBackColor = false;
+            // 
+            // carroBtn
+            // 
+            carroBtn.BackColor = Color.Transparent;
+            carroBtn.FlatAppearance.BorderSize = 0;
+            carroBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            carroBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            carroBtn.FlatStyle = FlatStyle.Flat;
+            carroBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            carroBtn.ForeColor = SystemColors.Control;
+            carroBtn.Location = new Point(114, 332);
+            carroBtn.Name = "carroBtn";
+            carroBtn.Size = new Size(105, 37);
+            carroBtn.TabIndex = 44;
+            carroBtn.UseVisualStyleBackColor = false;
+            carroBtn.Click += carroBtn_Click;
+            // 
+            // numEixosDrop
+            // 
+            numEixosDrop.DropDownStyle = ComboBoxStyle.DropDownList;
+            numEixosDrop.FormattingEnabled = true;
+            numEixosDrop.Items.AddRange(new object[] { "2", "3" });
+            numEixosDrop.Location = new Point(63, 422);
+            numEixosDrop.Name = "numEixosDrop";
+            numEixosDrop.Size = new Size(278, 23);
+            numEixosDrop.TabIndex = 47;
+            // 
             // AdicionarCamionetaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(704, 811);
+            Controls.Add(numEixosDrop);
+            Controls.Add(motaBtn);
+            Controls.Add(camiaoBtn);
+            Controls.Add(carroBtn);
             Controls.Add(maxPasstxt);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(addBtn);
             Controls.Add(cancelarBtn);
-            Controls.Add(numEixostxt);
             Controls.Add(precotxt);
             Controls.Add(modelotxt);
             Controls.Add(marcatxt);
             Controls.Add(anotxt);
             Controls.Add(matriculatxt);
             Name = "AdicionarCamionetaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdicionarCamionetaForm";
             Load += AdicionarCamionetaForm_Load;
             ResumeLayout(false);
@@ -218,15 +220,15 @@
 
         private Button addBtn;
         private Button cancelarBtn;
-        private TextBox numEixostxt;
         private TextBox precotxt;
         private TextBox modelotxt;
         private TextBox marcatxt;
         private TextBox anotxt;
         private TextBox matriculatxt;
-        private Button button4;
-        private Button button3;
-        private Button button2;
         private TextBox maxPasstxt;
+        private Button motaBtn;
+        private Button camiaoBtn;
+        private Button carroBtn;
+        private ComboBox numEixosDrop;
     }
 }

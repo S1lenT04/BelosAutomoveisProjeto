@@ -25,27 +25,14 @@ namespace BelosAutomoveisProjeto
             this.nomeUtilizador = nomeUtilizador;
             empresa = new Empresa("Belos Automóveis");
 
-            // Criar um veículo de cada tipo só para teste/apresentação
-            // (na prática viriam da base de dados ou de ficheiros)
+            // Criar um veículo de cada tipo
             empresa.InserirCarro(
                 "AA-11-BB", "BMW", "Série 1", 2020, 80m,
                 EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
 
-            empresa.InserirCarro(
-                "AA-11-BC", "BMW", "Série 1", 2020, 80m,
-                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
-
-            empresa.InserirCarro(
-                "AA-11-BD", "BMW", "Série 1", 2020, 80m,
-                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
-
-            empresa.InserirCarro(
-                "AA-11-BF", "BMW", "Série 1", 2020, 80m,
-                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Manual);
-
             empresa.InserirMota(
                 "CC-22-DD", "Honda", "PCX", 2019, 35m,
-                EstadoVeiculo.EmManutencao, DateTime.Today.AddDays(6), Cilindrada.Cc125);
+                EstadoVeiculo.EmManutencao, DateTime.Today.AddDays(14), Cilindrada.Cc125);
 
             empresa.InserirCamiao(
                 "EE-33-FF", "Volvo", "FH", 2018, 150m,

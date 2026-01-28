@@ -102,6 +102,30 @@ namespace BelosAutomoveisProjeto
         {
 
         }
+
+        private void carroBtn_Click(object sender, EventArgs e)
+        {
+            AdicionarCarroForm CarroForm = new AdicionarCarroForm();
+            this.Hide();
+            CarroForm.ShowDialog();
+            this.Close();
+        }
+
+        private void camionetaBtn_Click(object sender, EventArgs e)
+        {
+            AdicionarCamionetaForm CamionetaForm = new AdicionarCamionetaForm();
+            this.Hide();
+            CamionetaForm.ShowDialog();
+            this.Close();
+        }
+
+        private void motaBtn_Click(object sender, EventArgs e)
+        {
+            AdicionarMotaForm MotaForm = new AdicionarMotaForm();
+            this.Hide();
+            MotaForm.ShowDialog();
+            this.Close();
+        }
     }
 }
 

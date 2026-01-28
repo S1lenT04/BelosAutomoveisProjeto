@@ -28,8 +28,8 @@ namespace BelosAutomoveisProjeto
         {
             var carroForm = new AdicionarCarroForm(_empresa);
             this.Hide();
-            carroForm.ShowDialog(); // espera fechar
-            this.Close();           // fecha este selector
+            carroForm.ShowDialog();
+            this.Close();
         }
 
         private void camiaoBtn_Click(object sender, EventArgs e)

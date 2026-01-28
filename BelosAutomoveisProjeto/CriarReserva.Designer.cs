@@ -35,6 +35,7 @@
             calcPrecoBtn = new Button();
             cancelBtn = new Button();
             criarReservaBtn = new Button();
+            precoFinalLabel = new Label();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -105,12 +106,25 @@
             criarReservaBtn.TabIndex = 42;
             criarReservaBtn.UseVisualStyleBackColor = false;
             // 
+            // precoFinalLabel
+            // 
+            precoFinalLabel.AutoSize = true;
+            precoFinalLabel.BackColor = Color.Transparent;
+            precoFinalLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            precoFinalLabel.ForeColor = Color.White;
+            precoFinalLabel.Location = new Point(329, 292);
+            precoFinalLabel.Name = "precoFinalLabel";
+            precoFinalLabel.Size = new Size(61, 25);
+            precoFinalLabel.TabIndex = 43;
+            precoFinalLabel.Text = "label1";
+            // 
             // CriarReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(704, 501);
+            Controls.Add(precoFinalLabel);
             Controls.Add(criarReservaBtn);
             Controls.Add(cancelBtn);
             Controls.Add(calcPrecoBtn);
@@ -120,6 +134,7 @@
             Name = "CriarReserva";
             Text = "CriarReserva";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -130,5 +145,6 @@
         private Button calcPrecoBtn;
         private Button cancelBtn;
         private Button criarReservaBtn;
+        private Label precoFinalLabel;
     }
 }
