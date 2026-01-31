@@ -87,6 +87,16 @@ namespace BelosAutomoveisProjeto
             reserva.Veiculo.DataDisponivel = null;
         }
 
+        //Envia um veículo para manutenção
+        public void EnviarParaManutencao(Veiculo veiculo, DateTime dataDisponivel)
+        {
+            if (veiculo.Estado == EstadoVeiculo.EmManutencao)
+                throw new Exception("O veículo já está em manutenção.");
+
+            veiculo.Estado = EstadoVeiculo.EmManutencao;
+            veiculo.DataDisponivel = dataDisponivel;
+        }
+
         // calcula a faturação total entre duas datas
         public decimal FaturacaoTotal(DateTime inicio, DateTime fim)
         {
