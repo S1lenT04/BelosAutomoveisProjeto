@@ -76,6 +76,17 @@ namespace BelosAutomoveisProjeto
             reserva.Veiculo.DataDisponivel = reserva.DataFim;
         }
 
+        //Termina o aluguer de uma reserva ativa
+        public void TerminarAluguer(Reserva reserva)
+        {
+            if (reserva.Estado != EstadoReserva.Ativa)
+                throw new Exception("A reserva não está ativa.");
+
+            reserva.Estado = EstadoReserva.Concluida;
+            reserva.Veiculo.Estado = EstadoVeiculo.Disponivel;
+            reserva.Veiculo.DataDisponivel = null;
+        }
+
         // calcula a faturação total entre duas datas
         public decimal FaturacaoTotal(DateTime inicio, DateTime fim)
         {
