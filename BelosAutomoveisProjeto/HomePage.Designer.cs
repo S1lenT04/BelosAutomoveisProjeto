@@ -45,6 +45,7 @@
             button1 = new Button();
             button2 = new Button();
             faturacaoBtn = new Button();
+            precoFinalLabel = new Label();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -292,12 +293,25 @@
             faturacaoBtn.UseVisualStyleBackColor = false;
             faturacaoBtn.Click += faturacaoBtn_Click;
             // 
+            // precoFinalLabel
+            // 
+            precoFinalLabel.AutoSize = true;
+            precoFinalLabel.BackColor = Color.Transparent;
+            precoFinalLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            precoFinalLabel.ForeColor = Color.White;
+            precoFinalLabel.Location = new Point(1613, 246);
+            precoFinalLabel.Name = "precoFinalLabel";
+            precoFinalLabel.Size = new Size(61, 25);
+            precoFinalLabel.TabIndex = 44;
+            precoFinalLabel.Text = "label1";
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1904, 1041);
+            Controls.Add(precoFinalLabel);
             Controls.Add(faturacaoBtn);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -342,5 +356,6 @@
         private Button button1;
         private Button button2;
         private Button faturacaoBtn;
+        private Label precoFinalLabel;
     }
 }
