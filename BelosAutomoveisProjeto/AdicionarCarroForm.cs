@@ -137,7 +137,10 @@ namespace BelosAutomoveisProjeto
             this.Close();
         }
 
-
+        private void cancelarBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

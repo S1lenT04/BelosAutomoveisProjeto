@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace BelosAutomoveisProjeto
 {
-    public partial class CriarReserva : Form
+    public partial class AlterarEstado : Form
     {
         private Empresa empresa;
-
-        public CriarReserva(Empresa empresa)
+        public AlterarEstado(Empresa empresa)
         {
             InitializeComponent();
             this.empresa = empresa;
@@ -46,14 +45,6 @@ namespace BelosAutomoveisProjeto
                 selectVeiculos.SelectedIndex = 0;
         }
 
-        // Método auxiliar para obter o veículo selecionado
-        public Veiculo? ObterVeiculoSelecionado()
-        {
-            if (selectVeiculos.SelectedItem is ComboBoxItem item)
-                return item.Veiculo;
-            return null;
-        }
-
         // Classe auxiliar para guardar texto e veículo no ComboBox
         private class ComboBoxItem
         {
@@ -77,12 +68,12 @@ namespace BelosAutomoveisProjeto
             this.Close();
         }
 
-        private void criarReservaBtn_Click(object sender, EventArgs e)
+        private void AlterarEstado_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void selectVeiculos_SelectedIndexChanged(object sender, EventArgs e)
+        private void criarReservaBtn_Click(object sender, EventArgs e)
         {
 
         }

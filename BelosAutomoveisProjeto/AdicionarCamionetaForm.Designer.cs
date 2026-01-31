@@ -72,6 +72,7 @@
             cancelarBtn.Size = new Size(208, 46);
             cancelarBtn.TabIndex = 30;
             cancelarBtn.UseVisualStyleBackColor = false;
+            cancelarBtn.Click += cancelarBtn_Click_1;
             // 
             // precotxt
             // 
@@ -163,6 +164,7 @@
             camiaoBtn.Size = new Size(104, 37);
             camiaoBtn.TabIndex = 45;
             camiaoBtn.UseVisualStyleBackColor = false;
+            camiaoBtn.Click += camiaoBtn_Click;
             // 
             // carroBtn
             // 

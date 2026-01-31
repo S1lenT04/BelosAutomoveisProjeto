@@ -71,6 +71,7 @@
             cancelarBtn.Size = new Size(208, 46);
             cancelarBtn.TabIndex = 46;
             cancelarBtn.UseVisualStyleBackColor = false;
+            cancelarBtn.Click += cancelarBtn_Click_1;
             // 
             // precotxt
             // 

@@ -249,5 +249,29 @@ namespace BelosAutomoveisProjeto
                 flowLayoutPanel1.Controls.Add(item);
             }
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+
+            Login.Show();
+            this.Close();
+        }
+
+        private void estadoBtn_Click_1(object sender, EventArgs e)
+        {
+            AlterarEstado AlterarEstado = new AlterarEstado(empresa);
+
+            AlterarEstado.ShowDialog();
+            AtualizarListaVeiculos();
+        }
+
+        private void faturacaoBtn_Click(object sender, EventArgs e)
+        {
+            Faturação faturacao = new Faturação();
+
+            faturacao.ShowDialog();
+            AtualizarListaVeiculos();
+        }
     }
 }

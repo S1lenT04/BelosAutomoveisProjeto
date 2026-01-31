@@ -54,12 +54,14 @@
             // 
             // selectVeiculos
             // 
+            selectVeiculos.DropDownStyle = ComboBoxStyle.DropDownList;
             selectVeiculos.ForeColor = Color.Black;
             selectVeiculos.FormattingEnabled = true;
             selectVeiculos.Location = new Point(63, 133);
             selectVeiculos.Name = "selectVeiculos";
             selectVeiculos.Size = new Size(595, 23);
             selectVeiculos.TabIndex = 2;
+            selectVeiculos.SelectedIndexChanged += selectVeiculos_SelectedIndexChanged;
             // 
             // calcPrecoBtn
             // 
@@ -90,6 +92,7 @@
             cancelBtn.Size = new Size(206, 46);
             cancelBtn.TabIndex = 41;
             cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click;
             // 
             // criarReservaBtn
             // 
@@ -105,6 +108,7 @@
             criarReservaBtn.Size = new Size(206, 46);
             criarReservaBtn.TabIndex = 42;
             criarReservaBtn.UseVisualStyleBackColor = false;
+            criarReservaBtn.Click += criarReservaBtn_Click;
             // 
             // precoFinalLabel
             // 
@@ -132,6 +136,7 @@
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Name = "CriarReserva";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CriarReserva";
             ResumeLayout(false);
             PerformLayout();

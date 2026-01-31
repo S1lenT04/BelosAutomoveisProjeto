@@ -132,6 +132,19 @@ namespace BelosAutomoveisProjeto
             MotaForm.ShowDialog();
             this.Close();
         }
+
+        private void cancelarBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void camiaoBtn_Click(object sender, EventArgs e)
+        {
+            AdicionarCamiaoForm CamiaoForm = new AdicionarCamiaoForm();
+            this.Hide();
+            CamiaoForm.ShowDialog();
+            this.Close();
+        }
     }
 }
 
