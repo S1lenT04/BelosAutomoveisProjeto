@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -18,12 +19,19 @@ namespace BelosAutomoveisProjeto
     {
         private Empresa empresa;
         private string nomeUtilizador;
+        private buscarData d = new buscarData();
 
         public HomePage(string nomeUtilizador = "")
         {
             InitializeComponent();
             this.nomeUtilizador = nomeUtilizador;
             empresa = new Empresa("Belos Automóveis");
+
+            // vai buscar a data atual e coloca na label
+
+            precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
+
+
 
             // Criar um veículo de cada tipo
             empresa.InserirCarro(
@@ -273,5 +281,27 @@ namespace BelosAutomoveisProjeto
             faturacao.ShowDialog();
             AtualizarListaVeiculos();
         }
+
+        private void precoFinalLabel_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        //botao para recuar um dia
+        private void button1_Click(object sender, EventArgs e)
+        {
+            d.RecuarDia();
+            precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
+        }
+
+        //botao para avancar um dia
+        private void button2_Click(object sender, EventArgs e)
+        {
+            d.AvancarDia();
+            precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
+        }
+
+      
     }
 }

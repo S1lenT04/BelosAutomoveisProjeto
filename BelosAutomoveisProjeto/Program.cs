@@ -8,8 +8,7 @@ namespace BelosAutomoveisProjeto
         [STAThread]
         static void Main()
         {
-            TesteBackend.Executar();
-
+            
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
