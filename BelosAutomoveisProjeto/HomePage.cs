@@ -28,7 +28,6 @@ namespace BelosAutomoveisProjeto
             empresa = new Empresa("Belos Automóveis");
 
             // vai buscar a data atual e coloca na label
-
             precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
 
 
@@ -291,6 +290,7 @@ namespace BelosAutomoveisProjeto
         //botao para recuar um dia
         private void button1_Click(object sender, EventArgs e)
         {
+            
             d.RecuarDia();
             precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
         }

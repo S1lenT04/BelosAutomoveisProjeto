@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,19 @@ namespace BelosAutomoveisProjeto
             data = DateTime.Now.Date;
         }
 
-        //recua um dia
+        //recua um dia, mas apenas se a data resultante não for anterior a hoje
         public void RecuarDia()
         {
-            data = data.AddDays(-1);
+            if (data > DateTime.Now.Date)
+            {
+                data = data.AddDays(-1);
+            }
+            else
+            {
+                MessageBox.Show($"Não pode recuar a uma data inferior a {DateTime.Now.Date.ToString("dd/MM/yyyy")}" ,
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         //avanca um dia
