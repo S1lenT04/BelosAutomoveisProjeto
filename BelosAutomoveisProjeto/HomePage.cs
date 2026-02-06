@@ -47,11 +47,18 @@ namespace BelosAutomoveisProjeto
 
             empresa.InserirCamioneta(
                 "GG-44-HH", "Mercedes", "Tourismo", 2017, 130m,
-                EstadoVeiculo.Reservado, null, 3, 55);
+                EstadoVeiculo.Disponivel, null, 3, 55);
 
             empresa.InserirCarro(
                 "HH-55-II", "Ford", "Focus", 2021, 70m,
-                EstadoVeiculo.Alugado, DateTime.Today.AddDays(3), 5, TipoCaixa.Automatica);
+                EstadoVeiculo.Disponivel, null, 5, TipoCaixa.Automatica);
+        }
+
+        // Data de fim da reserva ativa do veículo (se existir)
+        private DateTime? ObterDataFimReserva(Veiculo v)
+        {
+            var reserva = empresa.Reservas.FirstOrDefault(r => r.Veiculo == v && r.Estado == EstadoReserva.Ativa);
+            return reserva?.DataFim;
         }
 
         // Atualiza a lista com TODOS os veículos da empresa
@@ -63,7 +70,7 @@ namespace BelosAutomoveisProjeto
             foreach (var v in veiculos)
             {
                 var item = new VeiculoListItem();
-                item.SetData(v); // passa o veículo para o user control
+                item.SetData(v, ObterDataFimReserva(v));
                 flowLayoutPanel1.Controls.Add(item);
             }
         }
@@ -187,7 +194,7 @@ namespace BelosAutomoveisProjeto
                 if (v is Carro)
                 {
                     var item = new VeiculoListItem();
-                    item.SetData(v);
+                    item.SetData(v, ObterDataFimReserva(v));
                     flowLayoutPanel1.Controls.Add(item);
                 }
             }
@@ -203,7 +210,7 @@ namespace BelosAutomoveisProjeto
                 if (v is Camiao)
                 {
                     var item = new VeiculoListItem();
-                    item.SetData(v);
+                    item.SetData(v, ObterDataFimReserva(v));
                     flowLayoutPanel1.Controls.Add(item);
                 }
             }
@@ -219,7 +226,7 @@ namespace BelosAutomoveisProjeto
                 if (v is Camioneta)
                 {
                     var item = new VeiculoListItem();
-                    item.SetData(v);
+                    item.SetData(v, ObterDataFimReserva(v));
                     flowLayoutPanel1.Controls.Add(item);
                 }
             }
@@ -235,7 +242,7 @@ namespace BelosAutomoveisProjeto
                 if (v is Mota)
                 {
                     var item = new VeiculoListItem();
-                    item.SetData(v);
+                    item.SetData(v, ObterDataFimReserva(v));
                     flowLayoutPanel1.Controls.Add(item);
                 }
             }
@@ -252,7 +259,7 @@ namespace BelosAutomoveisProjeto
             foreach (var v in veiculosEmManutencao)
             {
                 var item = new VeiculoListItem();
-                item.SetData(v);
+                item.SetData(v, ObterDataFimReserva(v));
                 flowLayoutPanel1.Controls.Add(item);
             }
         }
@@ -275,7 +282,7 @@ namespace BelosAutomoveisProjeto
 
         private void faturacaoBtn_Click(object sender, EventArgs e)
         {
-            Faturação faturacao = new Faturação();
+            Faturação faturacao = new Faturação(empresa);
 
             faturacao.ShowDialog();
             AtualizarListaVeiculos();
@@ -290,7 +297,7 @@ namespace BelosAutomoveisProjeto
         //botao para recuar um dia
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             d.RecuarDia();
             precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
         }
@@ -300,8 +307,56 @@ namespace BelosAutomoveisProjeto
         {
             d.AvancarDia();
             precoFinalLabel.Text = d.GetData().ToString("dd/MM/yyyy");
+            VerificarAlarmesPorData();
         }
 
-      
+        // Verifica se algum veículo terminou aluguer/manutenção na data simulada
+        private void VerificarAlarmesPorData()
+        {
+            DateTime dataAtual = d.GetData().Date;
+            var avisos = new StringBuilder();
+
+            foreach (var v in empresa.Veiculos.ToList())
+            {
+                if (!v.DataDisponivel.HasValue)
+                    continue;
+
+                // só nos interessa quando a data prevista já foi atingida ou ultrapassada
+                if (v.DataDisponivel.Value.Date > dataAtual)
+                    continue;
+
+                if (v.Estado == EstadoVeiculo.Alugado)
+                {
+                    // tenta encontrar a reserva ativa desse veículo e terminá-la
+                    var reservaAtiva = empresa.Reservas.FirstOrDefault(r => r.Veiculo == v && r.Estado == EstadoReserva.Ativa);
+
+                    if (reservaAtiva != null)
+                    {
+                        empresa.TerminarAluguer(reservaAtiva);
+                    }
+                    else
+                    {
+                        v.Estado = EstadoVeiculo.Disponivel;
+                        v.DataDisponivel = null;
+                    }
+
+                    avisos.AppendLine($"O veículo {v.Matricula} terminou o aluguer e passou para disponível.");
+                }
+                else if (v.Estado == EstadoVeiculo.EmManutencao)
+                {
+                    empresa.ConcluirManutencao(v);
+                    avisos.AppendLine($"O veículo {v.Matricula} saiu de manutenção e passou para disponível.");
+                }
+            }
+
+            if (avisos.Length > 0)
+            {
+                MessageBox.Show(avisos.ToString(), "Alerta de disponibilidade",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AtualizarListaVeiculos();
+            }
+        }
+
+
     }
 }

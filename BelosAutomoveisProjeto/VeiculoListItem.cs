@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +18,8 @@ namespace BelosAutomoveisProjeto
             InitializeComponent();
         }
 
-        // Método simples para preencher as labels com os dados dos veiculos
-        public void SetData(Veiculo v)
+        // Preenche as labels com os dados do veículo. dataFimReserva: data de fim da reserva (se existir); senão usa DataDisponivel.
+        public void SetData(Veiculo v, DateTime? dataFimReserva = null)
         {
             if (v == null) return;
 
@@ -28,10 +28,9 @@ namespace BelosAutomoveisProjeto
             modelotxt.Text = v.Modelo;
             anotxt.Text = v.Ano.ToString();
             precotxt.Text = $"{v.PrecoDiario:0.00}€";
-            // Data: mostra DataDisponivel se existir; senão deixa vazio/N/A
-            datatxt.Text = v.DataDisponivel.HasValue
-                ? v.DataDisponivel.Value.ToString("dd/MM/yyyy")
-                : string.Empty;
+            // Preferir a data de fim da reserva; senão a data disponível do veículo
+            var dataFim = dataFimReserva ?? v.DataDisponivel;
+            dataFimtxt.Text = dataFim.HasValue ? dataFim.Value.ToString("dd/MM/yyyy") : "-";
 
             // imagens vindas dos Resources (já adicionadas no projeto)
             categoriaImg.Image = v switch

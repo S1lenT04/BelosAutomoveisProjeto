@@ -61,8 +61,7 @@ namespace BelosAutomoveisProjeto
 
                 // Aceita "50cc", "125cc", "300cc"
                 string cilTxt = cilindradaDrop.SelectedItem!.ToString()!.Trim().ToLower().Replace("cc", "");
-                if (!int.TryParse(cilTxt, out int cilValor) ||
-                    (cilValor != 50 && cilValor != 125 && cilValor != 300))
+                if (!int.TryParse(cilTxt, out int cilValor) || (cilValor != 50 && cilValor != 125 && cilValor != 300))
                 {
                     MessageBox.Show("Cilindrada inválida (usa 50, 125 ou 300).");
                     return;

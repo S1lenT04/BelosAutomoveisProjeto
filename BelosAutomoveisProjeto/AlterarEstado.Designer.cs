@@ -1,4 +1,4 @@
-﻿namespace BelosAutomoveisProjeto
+namespace BelosAutomoveisProjeto
 {
     partial class AlterarEstado
     {
@@ -50,7 +50,7 @@
             estadoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             estadoCombo.ForeColor = Color.Black;
             estadoCombo.FormattingEnabled = true;
-            estadoCombo.Items.AddRange(new object[] { "Disponível", "Reservado", "Manutenção", "Alugado" });
+            estadoCombo.Items.AddRange(new object[] { "Disponível", "Manutenção", "Alugado" });
             estadoCombo.Location = new Point(63, 213);
             estadoCombo.Name = "estadoCombo";
             estadoCombo.Size = new Size(595, 23);

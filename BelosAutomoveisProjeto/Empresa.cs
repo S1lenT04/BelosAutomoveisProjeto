@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Text;
@@ -107,17 +107,6 @@ namespace BelosAutomoveisProjeto
 
             veiculo.Estado = EstadoVeiculo.Disponivel;
             veiculo.DataDisponivel = null;
-        }
-
-        // calcula a faturação total entre duas datas
-        public decimal FaturacaoTotal(DateTime inicio, DateTime fim)
-        {
-            return Reservas
-                .Where(r =>
-                    r.Estado == EstadoReserva.Concluida &&
-                    r.DataInicio >= inicio &&
-                    r.DataFim <= fim)
-                .Sum(r => r.PrecoTotal);
         }
 
         public override string ToString()

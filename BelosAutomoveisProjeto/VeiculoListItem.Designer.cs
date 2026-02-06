@@ -1,4 +1,4 @@
-﻿namespace BelosAutomoveisProjeto
+namespace BelosAutomoveisProjeto
 {
     partial class VeiculoListItem
     {
@@ -34,9 +34,9 @@
             modelotxt = new Label();
             anotxt = new Label();
             precotxt = new Label();
-            datatxt = new Label();
             estadoImg = new PictureBox();
             categoriaImg = new PictureBox();
+            dataFimtxt = new Label();
             ((System.ComponentModel.ISupportInitialize)estadoImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoriaImg).BeginInit();
             SuspendLayout();
@@ -96,17 +96,6 @@
             precotxt.TabIndex = 4;
             precotxt.Text = "1";
             // 
-            // datatxt
-            // 
-            datatxt.AutoSize = true;
-            datatxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            datatxt.ForeColor = Color.White;
-            datatxt.Location = new Point(1267, 24);
-            datatxt.Name = "datatxt";
-            datatxt.Size = new Size(22, 25);
-            datatxt.TabIndex = 5;
-            datatxt.Text = "1";
-            // 
             // estadoImg
             // 
             estadoImg.Location = new Point(19, 30);
@@ -124,15 +113,26 @@
             categoriaImg.TabStop = false;
             categoriaImg.Click += pictureBox2_Click;
             // 
+            // dataFimtxt (data de fim / última data)
+            // 
+            dataFimtxt.AutoSize = true;
+            dataFimtxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataFimtxt.ForeColor = Color.White;
+            dataFimtxt.Location = new Point(1267, 24);
+            dataFimtxt.Name = "dataFimtxt";
+            dataFimtxt.Size = new Size(22, 25);
+            dataFimtxt.TabIndex = 8;
+            dataFimtxt.Text = "1";
+            // 
             // VeiculoListItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(dataFimtxt);
             Controls.Add(categoriaImg);
             Controls.Add(estadoImg);
-            Controls.Add(datatxt);
             Controls.Add(precotxt);
             Controls.Add(anotxt);
             Controls.Add(modelotxt);
@@ -153,8 +153,8 @@
         private Label modelotxt;
         private Label anotxt;
         private Label precotxt;
-        private Label datatxt;
         private PictureBox estadoImg;
         private PictureBox categoriaImg;
+        private Label dataFimtxt;
     }
 }

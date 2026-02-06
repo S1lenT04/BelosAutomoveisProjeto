@@ -1,4 +1,4 @@
-﻿namespace BelosAutomoveisProjeto
+namespace BelosAutomoveisProjeto
 {
     partial class CriarReserva
     {
@@ -77,6 +77,7 @@
             calcPrecoBtn.Size = new Size(206, 46);
             calcPrecoBtn.TabIndex = 40;
             calcPrecoBtn.UseVisualStyleBackColor = false;
+            calcPrecoBtn.Click += calcPrecoBtn_Click;
             // 
             // cancelBtn
             // 
@@ -120,7 +121,7 @@
             precoFinalLabel.Name = "precoFinalLabel";
             precoFinalLabel.Size = new Size(61, 25);
             precoFinalLabel.TabIndex = 43;
-            precoFinalLabel.Text = "label1";
+            precoFinalLabel.Text = "0,00€";
             // 
             // CriarReserva
             // 
